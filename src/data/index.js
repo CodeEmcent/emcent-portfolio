@@ -8,7 +8,7 @@ export const personal = {
   name:       'Emekwue Innocent Chukwuemeka',
   brand:      'Emcent',
   handle:     'CodeEmcent',
-  tagline:    'MSc IT Management graduate — bridging strategy, systems, and software.',
+  tagline:    'MSc Management of Business IT graduate — bridging strategy, systems, and software.',
   location:   'London, United Kingdom',
   origin:     'Lagos, Nigeria',
   available:  'Open to opportunities · Sept 2026',
