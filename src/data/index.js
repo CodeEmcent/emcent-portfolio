@@ -36,14 +36,14 @@ export const heroStack = [
 
 export const about = {
   paragraphs: [
-    `I am <strong>Emekwue Innocent Chukwuemeka</strong> — known professionally as <strong>Emcent</strong> — an MBIT graduate with an unusual background: I began with Philosophy, earning degrees from Imo State University and the Pontifical Urbaniana University in Rome, before pivoting fully into information systems and software development.`,
+    `I am <strong>Emekwue Innocent Chukwuemeka</strong> — known professionally as <strong>Emcent</strong> — a Management of Business Information Technology (MBIT) graduate with an unusual background: I began with Philosophy, earning degrees from Imo State University and the Pontifical Urbaniana University in Rome, before pivoting fully into information systems and software development.`,
     `That grounding in rigorous thinking shapes how I approach technology. I don't just build systems — I interrogate why they should exist, how they serve people, and where they might fail. It's what drew me to the intersection of <strong>business strategy, systems design, and full-stack development</strong>.`,
     `At Greenwich, I have designed and built Emcent FMS — a real-world digital asset and inventory management system for facilities management operations — from architecture through to deployment. I've also led UX research, information systems analysis, IT risk assessments, and strategic IS implementation projects.`,
     `Before IT, I spent years in editorial roles — serving on five magazine editorial boards and one academic journal board, including as <strong>Editor-in-Chief</strong> — and authored a published book. That experience shapes how I communicate complex systems clearly to non-technical stakeholders, a capability as rare in IT as it is valuable.`,
     `I'm based in London, targeting roles in consulting, business analysis, systems development, and IT strategy — anywhere rigorous thinking and precise communication go hand in hand.`,
   ],
   details: [
-    { icon: '🎓', label: 'Education',    value: 'MSc Management of Business IT',       sub: 'University of Greenwich · 2025–2026' },
+    { icon: '🎓', label: 'Education',    value: 'MSc MBIT, Management of Business Information Technology',       sub: 'University of Greenwich · 2025–2026' },
     { icon: '📍', label: 'Location',     value: 'London, United Kingdom' },
     { icon: '🌍', label: 'Origin',       value: 'Lagos, Nigeria' },
     { icon: '💼', label: 'Availability', value: 'Open to opportunities · Sept 2026' },
