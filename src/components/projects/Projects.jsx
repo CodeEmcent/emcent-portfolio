@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react'
 import { projects } from '../../data'
 
 const L = {
@@ -10,12 +11,18 @@ const L = {
   accent:  '#16a34a',
 }
 
+// Fix 1: whiteSpace nowrap stops tags breaking mid-word
 function ProjectTag({ label, neutral }) {
   return (
     <span style={{
       fontFamily: '"JetBrains Mono",monospace',
-      fontSize: '0.67rem', letterSpacing: '0.1em', textTransform: 'uppercase',
-      padding: '0.3rem 0.7rem', borderRadius: '100px', border: '1px solid',
+      fontSize: '0.67rem',
+      letterSpacing: '0.1em',
+      textTransform: 'uppercase',
+      padding: '0.3rem 0.7rem',
+      borderRadius: '100px',
+      border: '1px solid',
+      whiteSpace: 'nowrap',
       background: neutral ? L.bg : 'rgba(22,163,74,0.1)',
       borderColor: neutral ? L.border : 'rgba(22,163,74,0.3)',
       color: neutral ? L.text3 : L.accent,
@@ -25,36 +32,33 @@ function ProjectTag({ label, neutral }) {
   )
 }
 
-const cardStyle = {
-  background: L.surface,
-  border: `1px solid ${L.border}`,
-  borderRadius: '20px',
-  padding: '2rem',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem',
-  position: 'relative',
-  overflow: 'hidden',
-  transition: 'border-color 0.3s ease, transform 0.3s ease',
-}
-
-function ProjectCard({ project }) {
+function ProjectCard({ project, isMobile }) {
   const { featured, wide, tags, year, title, description, stack, link, linkLabel } = project
-  const [hovered, setHovered] = React.useState(false)
+  const [hovered, setHovered] = useState(false)
 
-  const hoverStyle = hovered
-    ? { ...cardStyle, borderColor: L.accent, transform: 'translateY(-3px)' }
-    : cardStyle
-
-  const colSpan = (featured || wide) ? { gridColumn: 'span 2' } : {}
+  const cardStyle = {
+    background: L.surface,
+    border: `1px solid ${hovered ? L.accent : L.border}`,
+    borderRadius: '20px',
+    padding: isMobile ? '1.5rem' : '2rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem',
+    position: 'relative',
+    overflow: 'hidden',
+    transition: 'border-color 0.3s ease, transform 0.3s ease',
+    transform: hovered ? 'translateY(-3px)' : 'none',
+    // Fix 2: on mobile, featured and wide cards take full width
+    gridColumn: (featured || wide) && !isMobile ? 'span 2' : 'span 1',
+  }
 
   return (
     <div
-      style={{ ...hoverStyle, ...colSpan, flexDirection: featured ? undefined : 'column' }}
+      style={cardStyle}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Top accent line */}
+      {/* Top accent line on hover */}
       <div style={{
         position: 'absolute', top: 0, left: 0, right: 0, height: '2px',
         background: L.accent,
@@ -64,13 +68,13 @@ function ProjectCard({ project }) {
       }} />
 
       {featured ? (
-        <div style={{ display: 'flex', gap: '3rem', alignItems: 'center', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
           <div style={{ flex: 1 }}>
             <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1rem' }}>
               {tags.map((t, i) => <ProjectTag key={t} label={t} neutral={i > 0} />)}
               <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.7rem', color: L.text3, marginLeft: 'auto' }}>{year}</span>
             </div>
-            <h3 style={{ fontFamily: '"DM Serif Display",serif', fontSize: '2rem', lineHeight: 1.15, color: L.text, marginBottom: '1rem' }}>
+            <h3 style={{ fontFamily: '"DM Serif Display",serif', fontSize: isMobile ? '1.6rem' : '2rem', lineHeight: 1.15, color: L.text, marginBottom: '1rem' }}>
               Emcent Facilities<br />Management System
             </h3>
             <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: L.text2, marginBottom: '1.25rem' }}>{description}</p>
@@ -85,7 +89,10 @@ function ProjectCard({ project }) {
               </a>
             )}
           </div>
-          <p style={{ fontFamily: '"DM Serif Display",serif', fontSize: '7rem', color: L.border, lineHeight: 1, fontStyle: 'italic', userSelect: 'none', flexShrink: 0 }}>01</p>
+          {/* Fix 3: hide decorative 01 on mobile */}
+          {!isMobile && (
+            <p style={{ fontFamily: '"DM Serif Display",serif', fontSize: '7rem', color: L.border, lineHeight: 1, fontStyle: 'italic', userSelect: 'none', flexShrink: 0 }}>01</p>
+          )}
         </div>
       ) : (
         <>
@@ -107,11 +114,18 @@ function ProjectCard({ project }) {
   )
 }
 
-import React from 'react'
-
 export default function Projects() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
   return (
-    <section id="projects" style={{ background: L.bg, padding: '6rem 2.5rem' }}>
+    <section id="projects" style={{ background: L.bg, padding: isMobile ? '4rem 1.25rem' : '6rem 2.5rem' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
@@ -128,8 +142,13 @@ export default function Projects() {
           Academic and independent projects — each built end-to-end, from problem framing through to deployed product.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
-          {projects.map(p => <ProjectCard key={p.id} project={p} />)}
+        {/* Fix 4: single column on mobile, two columns on desktop */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
+          gap: '1.25rem',
+        }}>
+          {projects.map(p => <ProjectCard key={p.id} project={p} isMobile={isMobile} />)}
         </div>
       </div>
     </section>

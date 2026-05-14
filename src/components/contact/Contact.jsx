@@ -67,7 +67,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" style={{ background: L.bg, padding: '6rem 2.5rem' }}>
+    <section id="contact" style={{ background: L.bg, padding: 'clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 2.5rem)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
