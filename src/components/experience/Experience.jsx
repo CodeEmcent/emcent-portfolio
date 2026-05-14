@@ -21,7 +21,7 @@ export default function Experience() {
           Education & experience
         </h2>
         <p className="text-base leading-[1.75] mb-14 max-w-xl" style={{ color: 'var(--text-2)' }}>
-          An unconventional path — from Philosophy to full-stack systems — built across two countries and three institutions.
+          An unconventional path — from Philosophy and seven years in education and facility management, to full-stack systems development in London.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
@@ -40,7 +40,7 @@ export default function Experience() {
           {/* Work & Projects */}
           <div>
             <p className="font-mono text-[0.68rem] tracking-[0.15em] uppercase mb-6" style={{ color: 'var(--text-3)' }}>
-              Projects & Independent Work
+              Work Experience &amp; Projects
             </p>
             <div className="timeline">
               {experience.work.map((item, i) => (
