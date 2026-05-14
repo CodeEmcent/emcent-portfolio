@@ -138,7 +138,7 @@ export default function Contact() {
 
             {status === 'success' && (
               <p className="text-sm" style={{ color: 'var(--accent)' }}>
-                ✓ Message sent — I'll be in touch soon.
+                ✓ Message sent — Thank you very much. I'll be in touch soon.
               </p>
             )}
             {status === 'error' && (
