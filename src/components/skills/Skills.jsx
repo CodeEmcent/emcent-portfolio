@@ -1,4 +1,5 @@
 import { competencies, tools, certifications } from '../../data'
+import { CertLogo } from '../ui/CertLogos'
 
 function CompGroup({ icon, title, subtitle, tags }) {
   return (
@@ -22,23 +23,40 @@ function CompGroup({ icon, title, subtitle, tags }) {
 }
 
 function CertCard({ cert, size = 'lg' }) {
+  const logoSize = size === 'lg' ? 44 : 36
+
   const inner = (
     <div className="cert-card" style={{ cursor: cert.link ? 'pointer' : 'default' }}>
+      {/* Brand logo */}
       <div
-        className="flex-shrink-0 flex items-center justify-center rounded-xl border text-xl"
-        style={{ width: size === 'lg' ? 44 : 36, height: size === 'lg' ? 44 : 36, background: 'var(--bg-3)', borderColor: 'var(--border)' }}
+        className="flex-shrink-0 flex items-center justify-center rounded-xl overflow-hidden"
+        style={{
+          width: logoSize,
+          height: logoSize,
+          background: 'var(--surface)',
+          border: '1px solid var(--border)',
+        }}
       >
-        {size === 'sm' ? 'in' : cert.icon}
+        <CertLogo issuer={cert.issuer} size={logoSize - 10} />
       </div>
+
+      {/* Details */}
       <div className="flex-1 min-w-0">
         <p className="text-sm font-semibold leading-snug" style={{ color: 'var(--text)' }}>{cert.name}</p>
         <p className="font-mono text-[0.68rem] tracking-[0.08em] mt-0.5" style={{ color: 'var(--accent)' }}>{cert.issuer}</p>
         <div className="flex items-center gap-3 flex-wrap mt-1">
           <span className="font-mono text-[0.67rem]" style={{ color: 'var(--text-3)' }}>{cert.date}</span>
-          {cert.link && <span className="font-mono text-[0.67rem]" style={{ color: 'var(--text-3)' }}>↗ Verify</span>}
+          {cert.link && (
+            <span
+              className="font-mono text-[0.67rem] flex items-center gap-1"
+              style={{ color: 'var(--accent)' }}
+            >
+              ↗ Verify
+            </span>
+          )}
         </div>
         {cert.courses && (
-          <p className="text-xs mt-1.5" style={{ color: 'var(--text-3)' }}>{cert.courses}</p>
+          <p className="text-xs mt-1.5 leading-relaxed" style={{ color: 'var(--text-3)' }}>{cert.courses}</p>
         )}
       </div>
     </div>
@@ -95,7 +113,10 @@ export default function Skills() {
           className="flex items-center gap-4 p-5 rounded-xl mt-5 border"
           style={{ background: 'rgba(74,222,128,0.05)', borderColor: 'rgba(74,222,128,0.3)', borderStyle: 'dashed' }}
         >
-          <span className="text-2xl">{certifications.pending.icon}</span>
+          <div className="flex-shrink-0 flex items-center justify-center rounded-xl overflow-hidden"
+            style={{ width: 44, height: 44, background: 'var(--surface)', border: '1px solid var(--border)' }}>
+            <CertLogo issuer="Microsoft Azure" size={34} />
+          </div>
           <div className="flex-1">
             <p className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>{certifications.pending.name}</p>
             <p className="text-xs mt-0.5" style={{ color: 'var(--text-3)' }}>{certifications.pending.date} · {certifications.pending.issuer}</p>
