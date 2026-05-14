@@ -305,7 +305,7 @@ export const experience = {
       desc: 'Delivered civic education curriculum to secondary school students over four years. Developed skills in structured communication, audience-appropriate explanation, and curriculum design — capabilities now applied to technical documentation, stakeholder reporting, and systems communication.',
     },
     {
-      period: 'Prior to 2018',
+      period: '2010 to 2025',
       title: 'Editor-in-Chief & Editorial Board Member',
       org: '5 Magazines · 1 Academic Journal',
       desc: 'Served on six editorial boards including as Editor-in-Chief. Developed advanced skills in structured communication and analytical writing — now applied directly to technical documentation, IS implementation reports, and stakeholder communication.',
