@@ -1,6 +1,16 @@
 import { useState } from 'react'
 import { personal } from '../../data'
 
+const L = {
+  bg:      '#f5f7f2',
+  surface: '#ffffff',
+  border:  '#dde0d9',
+  text:    '#141a13',
+  text2:   '#4a5548',
+  text3:   '#8a9488',
+  accent:  '#16a34a',
+}
+
 const LinkedInIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -14,22 +24,25 @@ const GithubIcon = () => (
 )
 
 const contactLinks = [
-  {
-    href: personal.linkedin,
-    icon: <LinkedInIcon />,
-    label: 'LinkedIn',
-    value: 'Chukwuemeka Innocent Emekwue',
-  },
-  {
-    href: personal.github,
-    icon: <GithubIcon />,
-    label: 'GitHub',
-    value: 'github.com/CodeEmcent',
-  },
+  { href: personal.linkedin, icon: <LinkedInIcon />, label: 'LinkedIn', value: 'Chukwuemeka Innocent Emekwue' },
+  { href: personal.github,   icon: <GithubIcon />,   label: 'GitHub',   value: 'github.com/CodeEmcent' },
 ]
 
+const inputStyle = {
+  background: L.surface,
+  border: `1px solid ${L.border}`,
+  borderRadius: '12px',
+  padding: '0.875rem 1rem',
+  color: L.text,
+  fontFamily: '"DM Sans", sans-serif',
+  fontSize: '0.9rem',
+  outline: 'none',
+  width: '100%',
+  transition: 'border-color 0.2s',
+}
+
 export default function Contact() {
-  const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const [status, setStatus] = useState('idle')
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -40,113 +53,88 @@ export default function Contact() {
         body: new FormData(e.target),
         headers: { Accept: 'application/json' },
       })
-      if (res.ok) {
-        setStatus('success')
-        e.target.reset()
-      } else {
-        setStatus('error')
-      }
-    } catch {
-      setStatus('error')
-    }
+      if (res.ok) { setStatus('success'); e.target.reset() }
+      else setStatus('error')
+    } catch { setStatus('error') }
   }
 
   return (
-    <section id="contact" className="py-24 px-6 md:px-10" style={{ background: 'var(--bg-2)' }}>
-      <div className="max-w-6xl mx-auto">
-        <p className="section-label">Get in touch</p>
-        <h2 className="font-serif mb-14" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: 'var(--text)', lineHeight: 1.1 }}>
+    <section id="contact" style={{ background: L.bg, padding: '6rem 2.5rem' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+          <span style={{ display: 'block', width: 24, height: 1, background: L.accent, flexShrink: 0 }} />
+          <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: L.accent }}>
+            Get in touch
+          </span>
+        </div>
+
+        <h2 style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(2rem,3.5vw,3rem)', color: L.text, lineHeight: 1.1, marginBottom: '3.5rem' }}>
           Let's work together
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'start' }}>
+
           {/* Left */}
           <div>
-            <p className="text-base leading-[1.8] mb-8 max-w-sm" style={{ color: 'var(--text-2)' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: L.text2, marginBottom: '2rem', maxWidth: '400px' }}>
               Whether you're looking for a systems thinker, a developer, or someone who bridges both — I'd like to hear from you. Open to graduate roles, consulting opportunities, and project collaborations.
             </p>
-            <div className="flex flex-col gap-3">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {contactLinks.map(({ href, icon, label, value }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-4 p-5 rounded-xl border no-underline transition-all duration-200"
-                  style={{ background: 'var(--surface)', borderColor: 'var(--border)', color: 'var(--text)' }}
-                  onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
-                  onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+                <a key={label} href={href} target="_blank" rel="noreferrer"
+                  style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem 1.5rem', borderRadius: '12px', border: `1px solid ${L.border}`, background: L.surface, textDecoration: 'none', color: L.text, transition: 'border-color 0.2s' }}
+                  onMouseEnter={e => e.currentTarget.style.borderColor = L.accent}
+                  onMouseLeave={e => e.currentTarget.style.borderColor = L.border}
                 >
-                  <span style={{ color: 'var(--text-2)' }}>{icon}</span>
+                  <span style={{ color: L.text3 }}>{icon}</span>
                   <div>
-                    <p className="font-mono text-[0.68rem] tracking-[0.08em] uppercase" style={{ color: 'var(--text-3)' }}>
-                      {label}
-                    </p>
-                    <p className="text-sm font-medium mt-0.5" style={{ color: 'var(--text)' }}>{value}</p>
+                    <p style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.68rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: L.text3 }}>{label}</p>
+                    <p style={{ fontSize: '0.9rem', fontWeight: 500, color: L.text, marginTop: '0.15rem' }}>{value}</p>
                   </div>
-                  <span className="ml-auto text-sm" style={{ color: 'var(--text-3)' }}>↗</span>
+                  <span style={{ marginLeft: 'auto', color: L.text3 }}>↗</span>
                 </a>
               ))}
             </div>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             {[
-              { id: 'name',    label: 'Name',    type: 'text',  placeholder: 'Your name' },
-              { id: 'email',   label: 'Email',   type: 'email', placeholder: 'your@email.com' },
-              { id: 'subject', label: 'Subject', type: 'text',  placeholder: 'Role opportunity / Collaboration / Project' },
-            ].map(({ id, label, type, placeholder }) => (
-              <div key={id} className="flex flex-col gap-2">
-                <label htmlFor={id} className="font-mono text-[0.68rem] tracking-[0.1em] uppercase" style={{ color: 'var(--text-3)' }}>
+              { id: 'name',    label: 'Name',    type: 'text',  ph: 'Your name',    req: true },
+              { id: 'email',   label: 'Email',   type: 'email', ph: 'your@email.com', req: true },
+              { id: 'subject', label: 'Subject', type: 'text',  ph: 'Role opportunity / Collaboration / Project', req: false },
+            ].map(({ id, label, type, ph, req }) => (
+              <div key={id} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <label htmlFor={id} style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: L.text3 }}>
                   {label}
                 </label>
-                <input
-                  id={id}
-                  name={id}
-                  type={type}
-                  placeholder={placeholder}
-                  required={id !== 'subject'}
-                  className="form-input"
+                <input id={id} name={id} type={type} placeholder={ph} required={req}
+                  style={inputStyle}
+                  onFocus={e => e.target.style.borderColor = L.accent}
+                  onBlur={e => e.target.style.borderColor = L.border}
                 />
               </div>
             ))}
-
-            <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="font-mono text-[0.68rem] tracking-[0.1em] uppercase" style={{ color: 'var(--text-3)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              <label htmlFor="message" style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: L.text3 }}>
                 Message
               </label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell me about the opportunity or project..."
-                required
-                className="form-textarea"
+              <textarea id="message" name="message" placeholder="Tell me about the opportunity or project..." required
+                style={{ ...inputStyle, resize: 'vertical', minHeight: '130px' }}
+                onFocus={e => e.target.style.borderColor = L.accent}
+                onBlur={e => e.target.style.borderColor = L.border}
               />
             </div>
-
-            <button
-              type="submit"
-              disabled={status === 'sending' || status === 'success'}
-              className="flex items-center justify-center gap-2 py-3.5 px-8 rounded-lg text-sm font-semibold tracking-wide transition-opacity duration-200 hover:opacity-85 disabled:opacity-60"
-              style={{ background: 'var(--accent)', color: 'var(--bg)' }}
+            <button type="submit" disabled={status === 'sending' || status === 'success'}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.875rem 2rem', background: L.accent, color: '#fff', border: 'none', borderRadius: '8px', fontSize: '0.875rem', fontWeight: 600, cursor: 'pointer', opacity: (status === 'sending' || status === 'success') ? 0.6 : 1 }}
             >
-              {status === 'sending' ? 'Sending…'
-               : status === 'success' ? 'Sent ✓'
-               : 'Send Message →'}
+              {status === 'sending' ? 'Sending…' : status === 'success' ? 'Sent ✓' : 'Send Message →'}
             </button>
-
-            {status === 'success' && (
-              <p className="text-sm" style={{ color: 'var(--accent)' }}>
-                ✓ Message sent — Thank you very much. I'll be in touch soon.
-              </p>
-            )}
-            {status === 'error' && (
-              <p className="text-sm" style={{ color: '#f87171' }}>
-                Something went wrong. Please reach out via LinkedIn instead.
-              </p>
-            )}
+            {status === 'success' && <p style={{ fontSize: '0.85rem', color: L.accent }}>✓ Message sent — I'll be in touch soon.</p>}
+            {status === 'error'   && <p style={{ fontSize: '0.85rem', color: '#dc2626' }}>Something went wrong. Please reach out via LinkedIn instead.</p>}
           </form>
+
         </div>
       </div>
     </section>

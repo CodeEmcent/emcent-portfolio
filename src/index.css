@@ -2,39 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── LIGHT SECTION (About, Projects, Contact) ── */
+/* ─────────────────────────────────────────────────────────
+   LIGHT SECTION SYSTEM
+   React inline styles read CSS vars from :root, not from
+   a parent class. Fix: force all colour-bearing elements
+   inside .section-light to the correct light values using
+   direct child selectors and !important where needed.
+───────────────────────────────────────────────────────── */
 .section-light {
-  --bg:      #f5f7f2;
-  --bg-2:    #eef0eb;
-  --bg-3:    #e5e8e1;
-  --surface: #ffffff;
-  --border:  #dde0d9;
-  --text:    #141a13;
-  --text-2:  #4a5548;
-  --text-3:  #8a9488;
-  --accent:  #16a34a;
-  background-color: #f5f7f2;
+  background-color: #f5f7f2 !important;
+  color: #141a13;
 }
-.section-light .section-label { color: #16a34a; }
-.section-light .section-label::before { background: #16a34a; }
-.section-light .comp-tag { background: #eaece7; border-color: #d4d8cf; color: #4a5548; }
-.section-light .comp-tag.hi { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.35); color: #16a34a; }
-.section-light .stack-badge { background: #eaece7; border-color: #d4d8cf; color: #6a7868; }
-.section-light .cert-card { background: #ffffff; border-color: #dde0d9; }
-.section-light .cert-card:hover { border-color: #16a34a; }
-.section-light .project-card-wrap { background: #ffffff; border-color: #dde0d9; }
-.section-light .project-card-wrap:hover { border-color: #16a34a; }
-.section-light .project-card-wrap::before { background: #16a34a; }
-.section-light .timeline::before { background: #dde0d9; }
-.section-light .timeline-dot { background: #f5f7f2; border-color: #dde0d9; }
-.section-light .timeline-item:hover .timeline-dot { border-color: #16a34a; background: #16a34a; }
+
+/* Force all inline-styled text nodes */
+.section-light [style*="var(--text)"],
+.section-light [style*="var(--text)"] { color: #141a13 !important; }
+.section-light [style*="var(--text-2)"] { color: #4a5548 !important; }
+.section-light [style*="var(--text-3)"] { color: #8a9488 !important; }
+.section-light [style*="var(--accent)"] { color: #16a34a !important; }
+.section-light [style*="var(--bg)"]     { background-color: #f5f7f2 !important; }
+.section-light [style*="var(--bg-2)"]   { background-color: #eef0eb !important; }
+.section-light [style*="var(--bg-3)"]   { background-color: #e5e8e1 !important; }
+.section-light [style*="var(--surface)"]{ background-color: #ffffff !important; }
+.section-light [style*="var(--border)"] { border-color: #dde0d9 !important; }
+
+/* Border colour in style attributes */
+.section-light [style*="borderColor: 'var(--border)'"],
+.section-light [style*="borderColor:'var(--border)'"] { border-color: #dde0d9 !important; }
+
+/* Background in style attributes */
+.section-light [style*="background: 'var(--surface)'"],
+.section-light [style*="background:'var(--surface)'"] { background: #ffffff !important; }
+
+/* Section label eyebrow */
+.section-light .section-label { color: #16a34a !important; }
+.section-light .section-label::before { background: #16a34a !important; }
+
+/* Competency tags */
+.section-light .comp-tag {
+  background: #eaece7 !important;
+  border-color: #d4d8cf !important;
+  color: #4a5548 !important;
+}
+.section-light .comp-tag.hi {
+  background: rgba(22,163,74,0.12) !important;
+  border-color: rgba(22,163,74,0.4) !important;
+  color: #16a34a !important;
+}
+.section-light .stack-badge {
+  background: #eaece7 !important;
+  border-color: #d4d8cf !important;
+  color: #6a7868 !important;
+}
+
+/* All bordered boxes — cards, cert cards, about details */
+.section-light .cert-card,
+.section-light .card,
+.section-light .project-card-wrap {
+  background: #ffffff !important;
+  border-color: #dde0d9 !important;
+}
+.section-light .cert-card:hover,
+.section-light .project-card-wrap:hover { border-color: #16a34a !important; }
+.section-light .project-card-wrap::before { background: #16a34a !important; }
+
+/* Any inline border and background on divs */
+.section-light div[style*="border"] { border-color: #dde0d9 !important; }
+.section-light div[style*="background"] { background-color: #ffffff !important; }
+
+/* Timeline */
+.section-light .timeline::before { background: #dde0d9 !important; }
+.section-light .timeline-dot {
+  background: #f5f7f2 !important;
+  border-color: #dde0d9 !important;
+}
+.section-light .timeline-item:hover .timeline-dot {
+  border-color: #16a34a !important;
+  background: #16a34a !important;
+}
+
+/* Form inputs */
 .section-light .form-input,
-.section-light .form-textarea { background: #ffffff; border-color: #dde0d9; color: #141a13; }
+.section-light .form-textarea {
+  background: #ffffff !important;
+  border-color: #dde0d9 !important;
+  color: #141a13 !important;
+}
 .section-light .form-input:focus,
-.section-light .form-textarea:focus { border-color: #16a34a; }
+.section-light .form-textarea:focus { border-color: #16a34a !important; }
 .section-light .form-input::placeholder,
-.section-light .form-textarea::placeholder { color: #8a9488; }
-.section-light .card { background: #ffffff; border-color: #dde0d9; }
+.section-light .form-textarea::placeholder { color: #8a9488 !important; }
+
+/* Contact links */
+.section-light a[style*="var(--surface)"],
+.section-light a[style*="var(--border)"] {
+  background: #ffffff !important;
+  border-color: #dde0d9 !important;
+  color: #141a13 !important;
+}
+
+/* Mono text that uses var(--text-3) */
+.section-light .font-mono { color: #8a9488; }
+
+/* Override font-mono accent uses (eyebrow, cert issuer) */
+.section-light .section-label,
+.section-light [style*="var(--accent)"].font-mono { color: #16a34a !important; }
+
+/* Divider between sections */
+.section-light + .h-px { background: #dde0d9 !important; }
 
 /* ── CSS CUSTOM PROPERTIES (dark — default) ── */
 :root {

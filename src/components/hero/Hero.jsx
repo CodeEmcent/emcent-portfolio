@@ -56,7 +56,7 @@ export default function Hero() {
           className="animate-fade-up delay-400 text-lg leading-[1.7] mb-10 max-w-md"
           style={{ color: 'var(--text-2)' }}
         >
-          <strong style={{ color: 'var(--text)', fontWeight: 500 }}>MSc MBIT, Management of Business Information Technology graduate</strong>
+          <strong style={{ color: 'var(--text)', fontWeight: 500 }}>MSc IT Management graduate</strong>
           {' '}— bridging strategy, systems, and software. Based in London, building at the intersection of business thinking and technical execution.
         </p>
 

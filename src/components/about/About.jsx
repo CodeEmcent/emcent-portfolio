@@ -1,53 +1,60 @@
 import { about } from '../../data'
 
+const L = {
+  bg:      '#f5f7f2',
+  surface: '#ffffff',
+  border:  '#dde0d9',
+  text:    '#141a13',
+  text2:   '#4a5548',
+  text3:   '#8a9488',
+  accent:  '#16a34a',
+}
+
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6 md:px-10" style={{ background: 'var(--bg-2)' }}>
-      <div className="max-w-6xl mx-auto">
-        <p className="section-label">Who I am</p>
-        <h2 className="font-serif mb-12" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: 'var(--text)', lineHeight: 1.1 }}>
+    <section id="about" style={{ background: L.bg, padding: '6rem 2.5rem' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+          <span style={{ display: 'block', width: 24, height: 1, background: L.accent, flexShrink: 0 }} />
+          <span style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: L.accent }}>
+            Who I am
+          </span>
+        </div>
+
+        <h2 style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(2rem,3.5vw,3rem)', color: L.text, lineHeight: 1.1, marginBottom: '3rem' }}>
           A systems thinker<br />who ships code.
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
-          {/* Text */}
-          <div className="flex flex-col gap-5 text-base leading-[1.85]" style={{ color: 'var(--text-2)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3.5rem', alignItems: 'start' }}>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', fontSize: '1.05rem', lineHeight: 1.85 }}>
             {about.paragraphs.map((p, i) => (
-              <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+              <p key={i} dangerouslySetInnerHTML={{ __html: p }} style={{ color: L.text2 }} />
             ))}
           </div>
 
-          {/* Detail cards */}
-          <div className="flex flex-col gap-4">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {about.details.map(({ icon, label, value, sub, link }) => (
-              <div
-                key={label}
-                className="flex items-start gap-4 p-5 rounded-xl border"
-                style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
-              >
-                <span className="text-xl leading-none mt-0.5 flex-shrink-0">{icon}</span>
+              <div key={label} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.25rem', borderRadius: '12px', background: L.surface, border: `1px solid ${L.border}` }}>
+                <span style={{ fontSize: '1.25rem', lineHeight: 1, flexShrink: 0, marginTop: '0.1rem' }}>{icon}</span>
                 <div>
-                  <p className="font-mono text-[0.68rem] tracking-[0.1em] uppercase mb-1" style={{ color: 'var(--text-3)' }}>
+                  <p style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: L.text3, marginBottom: '0.2rem' }}>
                     {label}
                   </p>
                   {link ? (
-                    <a
-                      href={link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-sm font-medium no-underline"
-                      style={{ color: 'var(--accent)' }}
-                    >
+                    <a href={link} target="_blank" rel="noreferrer" style={{ fontSize: '0.9rem', fontWeight: 500, color: L.accent, textDecoration: 'none' }}>
                       {value}
                     </a>
                   ) : (
-                    <p className="text-sm font-medium" style={{ color: 'var(--text)' }}>{value}</p>
+                    <p style={{ fontSize: '0.9rem', fontWeight: 500, color: L.text }}>{value}</p>
                   )}
-                  {sub && <p className="text-xs mt-0.5" style={{ color: 'var(--text-3)' }}>{sub}</p>}
+                  {sub && <p style={{ fontSize: '0.78rem', color: L.text3, marginTop: '0.15rem' }}>{sub}</p>}
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

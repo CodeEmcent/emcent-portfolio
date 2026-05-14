@@ -274,6 +274,18 @@ export const experience = {
   ],
   work: [
     {
+      period: '2026 — In Progress',
+      title: 'Web Developer & Systems Designer',
+      org: 'E. Excel Standard Concepts — Client Project',
+      desc: 'Scoped, designed, and leading development of a full business website for a Lagos-based electrical accessories supplier — covering UX, system design, and deployment.',
+    },
+    {
+      period: 'Sept 2025 – Present',
+      title: 'Lead Developer & Researcher',
+      org: 'Emcent Facilities Management System — MSc Dissertation',
+      desc: 'Designing and building a full-stack digital asset and inventory management system for facilities management SME operations. Follows DSRM end-to-end — from problem identification through artefact design, development, and evaluation against the DeLone & McLean IS success model.',
+    },
+    {
       period: 'Sept 2023 – June 2025',
       title: 'Facility Manager',
       org: 'Our Lady of Apostles Secondary School (OLASS), Yaba, Lagos',
@@ -292,19 +304,7 @@ export const experience = {
       desc: 'Delivered civic education curriculum to secondary school students over four years. Developed skills in structured communication, audience-appropriate explanation, and curriculum design — capabilities now applied to technical documentation, stakeholder reporting, and systems communication.',
     },
     {
-      period: 'Sept 2025 – Present',
-      title: 'Lead Developer & Researcher',
-      org: 'Emcent Facilities Management System — MSc Dissertation',
-      desc: 'Designing and building a full-stack digital asset and inventory management system for facilities management SME operations. Follows DSRM end-to-end — from problem identification through artefact design, development, and evaluation against the DeLone & McLean IS success model.',
-    },
-    {
-      period: '2026 — In Progress',
-      title: 'Web Developer & Systems Designer',
-      org: 'E. Excel Standard Concepts — Client Project',
-      desc: 'Scoped, designed, and leading development of a full business website for a Lagos-based electrical accessories supplier — covering UX, system design, and deployment.',
-    },
-    {
-      period: 'Prior to 2025',
+      period: 'Prior to 2018',
       title: 'Editor-in-Chief & Editorial Board Member',
       org: '5 Magazines · 1 Academic Journal',
       desc: 'Served on six editorial boards including as Editor-in-Chief. Developed advanced skills in structured communication and analytical writing — now applied directly to technical documentation, IS implementation reports, and stakeholder communication.',
