@@ -8,13 +8,13 @@ export const personal = {
   name:       'Emekwue Innocent Chukwuemeka',
   brand:      'Emcent',
   handle:     'CodeEmcent',
-  tagline:    'MSc MBIT, Management of Business Information Technology graduate — bridging strategy, systems, and software.',
+  tagline:    'MSc Business IT Management graduate — bridging strategy, systems, and software.',
   location:   'London, United Kingdom',
   origin:     'Lagos, Nigeria',
   available:  'Open to opportunities · Sept 2026',
   linkedin:   'https://www.linkedin.com/in/chukwuemeka-innocent-emekwue-64844b153/',
   github:     'https://github.com/CodeEmcent',
-  formspree:  'https://formspree.io/f/meenwdey',
+  formspree:  'https://formspree.io/f/YOUR_FORM_ID',
 }
 
 export const stats = [
@@ -36,17 +36,18 @@ export const heroStack = [
 
 export const about = {
   paragraphs: [
-    `I am <strong>Emekwue Innocent Chukwuemeka</strong> — known professionally as <strong>Emcent</strong> — a Management of Business Information Technology (MBIT) graduate with an unusual background: I began with Philosophy, earning degrees from Imo State University and the Pontifical Urbaniana University in Rome, before pivoting fully into information systems and software development.`,
+    `I am <strong>Emekwue Innocent Chukwuemeka</strong> — known professionally as <strong>Emcent</strong> — an IT management graduate with an unusual background: I began with Philosophy, earning degrees (First Class Honours and Summa Cum Laude) from Imo State University and the Pontifical Urbaniana University in Rome, before pivoting fully into information systems and software development.`,
     `That grounding in rigorous thinking shapes how I approach technology. I don't just build systems — I interrogate why they should exist, how they serve people, and where they might fail. It's what drew me to the intersection of <strong>business strategy, systems design, and full-stack development</strong>.`,
-    `At Greenwich, I have designed and built Emcent FMS — a real-world digital asset and inventory management system for facilities management operations — from architecture through to deployment. I've also led UX research, information systems analysis, IT risk assessments, and strategic IS implementation projects.`,
-    `Before IT, I spent years in editorial roles — serving on five magazine editorial boards and one academic journal board, including as <strong>Editor-in-Chief</strong> — and authored a published book. That experience shapes how I communicate complex systems clearly to non-technical stakeholders, a capability as rare in IT as it is valuable.`,
+    `Before IT, I spent seven years at Our Lady of Apostles Secondary School in Lagos — progressing from Teacher to Examinations Officer & Analyst to <strong>Facility Manager</strong>. That final role, managing assets, maintenance, and inventory for a large institution, directly shaped my MSc dissertation: Emcent FMS is not a theoretical exercise — it was built to solve problems I experienced first-hand in a real facility.`,
+    `At Greenwich, I have designed and built Emcent FMS end-to-end, led UX research (VeriLens), produced systems analysis work (BUBO), and delivered a strategic IS implementation report. I've also served on five magazine editorial boards and one academic journal board, including as <strong>Editor-in-Chief</strong>, and authored a published book — a background that shapes how I communicate complex systems clearly to non-technical stakeholders.`,
     `I'm based in London, targeting roles in consulting, business analysis, systems development, and IT strategy — anywhere rigorous thinking and precise communication go hand in hand.`,
   ],
   details: [
-    { icon: '🎓', label: 'Education',    value: 'MSc MBIT, Management of Business Information Technology',       sub: 'University of Greenwich · 2025–2026' },
+    { icon: '🎓', label: 'Education',    value: 'MSc Management of Business IT (MBIT)',  sub: 'University of Greenwich · 2025–2026' },
     { icon: '📍', label: 'Location',     value: 'London, United Kingdom' },
     { icon: '🌍', label: 'Origin',       value: 'Lagos, Nigeria' },
-    { icon: '💼', label: 'Availability', value: 'Open to opportunities · Sept 2026' },
+    { icon: '💼', label: 'Experience',   value: 'Facility Manager · Teacher · Analyst',   sub: 'OLASS, Yaba, Lagos · 2018–2025' },
+    { icon: '📅', label: 'Availability', value: 'Open to opportunities · Sept 2026' },
     { icon: '🔗', label: 'GitHub',       value: 'github.com/CodeEmcent', link: 'https://github.com/CodeEmcent' },
   ],
 }
@@ -254,29 +255,47 @@ export const experience = {
   education: [
     {
       period: 'Sept 2025 – Sept 2026',
-      title: 'MSc Management of Business Information Technology',
+      title: 'MSc Management of Business Information Technology (MBIT)',
       org: 'University of Greenwich, London',
       desc: 'Modules spanning Systems Analysis & Design, UX Design, Strategic IT, Software Quality Management, IT Security & Risk, Project Management, and Systems Modelling. Dissertation: Emcent FMS — a full-stack digital asset and inventory management system.',
     },
     {
       period: '2011 – 2015',
-      title: 'Bachelor of Philosophy (B.Phil.)',
-      org: 'Pontifical Urbaniana University, Rome, Italy',
-      desc: 'Rigorous training in critical reasoning, formal argumentation, epistemology, and ethical theory — providing the analytical foundation that underpins all subsequent work in systems thinking and IT strategy.',
+      title: 'Bachelor of Philosophy (B.Phil.) — Summa Cum Laude',
+      org: 'Pontifical Urbaniana University, Rome · Seat of Wisdom Major Seminary, Owerri',
+      desc: 'Awarded summa cum laude. Rigorous training in critical reasoning, formal argumentation, epistemology, and ethical theory — providing the analytical foundation that underpins all subsequent work in systems thinking and IT strategy.',
     },
     {
       period: '2011 – 2015',
-      title: 'Bachelor of Arts (B.A.) in Philosophy',
-      org: 'Imo State University, Owerri, Nigeria',
-      desc: 'Complementary degree exploring the philosophy of mind, logic, and African philosophy — developing structured reasoning and written communication skills.',
+      title: 'Bachelor of Arts in Philosophy — First Class Honours',
+      org: 'Imo State University, Owerri · Seat of Wisdom Major Seminary',
+      desc: 'Awarded First Class Honours. Explored the philosophy of mind, logic, and African philosophy — developing structured reasoning and written communication skills that now inform how I frame technical problems and communicate systems to non-technical stakeholders.',
     },
   ],
   work: [
     {
+      period: 'Sept 2023 – June 2025',
+      title: 'Facility Manager',
+      org: 'Our Lady of Apostles Secondary School (OLASS), Yaba, Lagos',
+      desc: 'Managed facilities operations — asset tracking, maintenance scheduling, inventory management, and vendor coordination — for a large secondary school institution. This hands-on experience directly informed the design and scope of Emcent FMS: a digital system built to solve the exact operational problems encountered in this role.',
+    },
+    {
+      period: 'Sept 2022 – June 2023',
+      title: 'Examinations Officer & Analyst',
+      org: 'Our Lady of Apostles Secondary School (OLASS), Yaba, Lagos',
+      desc: 'Led examination logistics and data analysis for student cohorts. Managed data integrity, reporting pipelines, and process coordination under strict regulatory timelines — developing skills in structured data management, analytical reporting, and institutional process design.',
+    },
+    {
+      period: 'Jan 2018 – June 2022',
+      title: 'Teacher — Civic Education',
+      org: 'Our Lady of Apostles Secondary School (OLASS), Yaba, Lagos',
+      desc: 'Delivered civic education curriculum to secondary school students over four years. Developed skills in structured communication, audience-appropriate explanation, and curriculum design — capabilities now applied to technical documentation, stakeholder reporting, and systems communication.',
+    },
+    {
       period: 'Sept 2025 – Present',
       title: 'Lead Developer & Researcher',
       org: 'Emcent Facilities Management System — MSc Dissertation',
-      desc: 'Designed and built a full-stack digital asset and inventory management system for facilities management SME operations. Followed DSRM end-to-end — from problem identification through artefact design, development, and evaluation against the DeLone & McLean IS success model.',
+      desc: 'Designing and building a full-stack digital asset and inventory management system for facilities management SME operations. Follows DSRM end-to-end — from problem identification through artefact design, development, and evaluation against the DeLone & McLean IS success model.',
     },
     {
       period: '2026 — In Progress',
@@ -285,28 +304,10 @@ export const experience = {
       desc: 'Scoped, designed, and leading development of a full business website for a Lagos-based electrical accessories supplier — covering UX, system design, and deployment.',
     },
     {
-      period: 'Dec 2025 – Feb 2026',
-      title: 'Full-Stack Developer',
-      org: 'Beta Chow Foods — University of Greenwich',
-      desc: 'Designed and deployed a full-stack food ordering and admin management platform using React, Django REST Framework, PostgreSQL, and JWT authentication.',
-    },
-    {
-      period: '2025 – Present',
-      title: 'Founder & Developer',
-      org: 'Emcent — Personal Brand & Projects',
-      desc: 'Conceived and building a suite of technology products and client services under the Emcent brand, combining business strategy, systems design, and full-stack development.',
-    },
-    {
       period: 'Prior to 2025',
       title: 'Editor-in-Chief & Editorial Board Member',
-      org: 'Multiple Publications — 5 Magazines · 1 Academic Journal',
-      desc: 'Served on six editorial boards across five magazines and one academic journal, including as Editor-in-Chief. Developed advanced skills in structured communication and analytical writing now applied to technical documentation and stakeholder reporting.',
-    },
-    {
-      period: 'Apr 2021',
-      title: 'Published Author',
-      org: 'Gazub Press',
-      desc: 'Authored and published The Question of Social Conscience: A Personal Reflection — a long-form philosophical work on moral responsibility and social ethics.',
+      org: '5 Magazines · 1 Academic Journal',
+      desc: 'Served on six editorial boards including as Editor-in-Chief. Developed advanced skills in structured communication and analytical writing — now applied directly to technical documentation, IS implementation reports, and stakeholder communication.',
     },
   ],
 }

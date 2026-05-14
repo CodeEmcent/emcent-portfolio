@@ -2,7 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── CSS CUSTOM PROPERTIES (theme-aware) ── */
+/* ── LIGHT SECTION (About, Projects, Contact) ── */
+.section-light {
+  --bg:      #f5f7f2;
+  --bg-2:    #eef0eb;
+  --bg-3:    #e5e8e1;
+  --surface: #ffffff;
+  --border:  #dde0d9;
+  --text:    #141a13;
+  --text-2:  #4a5548;
+  --text-3:  #8a9488;
+  --accent:  #16a34a;
+  background-color: #f5f7f2;
+}
+.section-light .section-label { color: #16a34a; }
+.section-light .section-label::before { background: #16a34a; }
+.section-light .comp-tag { background: #eaece7; border-color: #d4d8cf; color: #4a5548; }
+.section-light .comp-tag.hi { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.35); color: #16a34a; }
+.section-light .stack-badge { background: #eaece7; border-color: #d4d8cf; color: #6a7868; }
+.section-light .cert-card { background: #ffffff; border-color: #dde0d9; }
+.section-light .cert-card:hover { border-color: #16a34a; }
+.section-light .project-card-wrap { background: #ffffff; border-color: #dde0d9; }
+.section-light .project-card-wrap:hover { border-color: #16a34a; }
+.section-light .project-card-wrap::before { background: #16a34a; }
+.section-light .timeline::before { background: #dde0d9; }
+.section-light .timeline-dot { background: #f5f7f2; border-color: #dde0d9; }
+.section-light .timeline-item:hover .timeline-dot { border-color: #16a34a; background: #16a34a; }
+.section-light .form-input,
+.section-light .form-textarea { background: #ffffff; border-color: #dde0d9; color: #141a13; }
+.section-light .form-input:focus,
+.section-light .form-textarea:focus { border-color: #16a34a; }
+.section-light .form-input::placeholder,
+.section-light .form-textarea::placeholder { color: #8a9488; }
+.section-light .card { background: #ffffff; border-color: #dde0d9; }
+
+/* ── CSS CUSTOM PROPERTIES (dark — default) ── */
 :root {
   --accent:     #4ade80;
   --accent-dim: #22c55e;
