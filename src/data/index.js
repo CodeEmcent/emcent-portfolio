@@ -14,6 +14,7 @@ export const personal = {
   available:  'Open to opportunities · Sept 2026',
   linkedin:   'https://www.linkedin.com/in/chukwuemeka-innocent-emekwue-64844b153/',
   github:     'https://github.com/CodeEmcent',
+  email:      'innocent@emcent.dev',
   formspree:  'https://formspree.io/f/YOUR_FORM_ID',
 }
 
