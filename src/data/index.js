@@ -46,7 +46,7 @@ export const about = {
   details: [
     { icon: '🎓', label: 'Education',    value: 'MSc Management of Business IT (MBIT)',  sub: 'University of Greenwich · 2025–2026' },
     { icon: '📍', label: 'Location',     value: 'London, United Kingdom' },
-    { icon: '🌍', label: 'Origin',       value: 'Lagos, Nigeria' },
+    { icon: '🌍', label: 'From',         value: 'Anambra State, Nigeria' },
     { icon: '💼', label: 'Experience',   value: 'Facility Manager · Teacher · Analyst',   sub: 'OLASS, Yaba, Lagos · 2018–2025' },
     { icon: '📅', label: 'Availability', value: 'Open to opportunities · Sept 2026' },
     { icon: '🔗', label: 'GitHub',       value: 'github.com/CodeEmcent', link: 'https://github.com/CodeEmcent' },
