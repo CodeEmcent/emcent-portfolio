@@ -221,7 +221,7 @@ export default function Nav() {
                     color: '#6b7069',
                     marginTop: '0.25rem',
                     margin: '0.25rem 0 0',
-                  }}>Emekwue Innocent</p>
+                  }}>Emekwue Innocent Chukwuemeka</p>
                 </div>
               </div>
 
