@@ -102,37 +102,41 @@ export default function Nav() {
             >Connect →</a>
           )}
 
-          {/* Hamburger — mobile only */}
+          {/* Hamburger — mobile only, shows X when open */}
           {isMobile && (
             <button
               onClick={() => setOpen(o => !o)}
               aria-label="Toggle menu"
               style={{
                 display: 'flex',
-                flexDirection: 'column',
-                gap: '5px',
-                padding: '4px',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '32px',
+                height: '32px',
                 background: 'none',
                 border: 'none',
                 outline: 'none',
                 cursor: 'pointer',
+                color: '#9aa398',
+                fontSize: open ? '1.3rem' : undefined,
+                transition: 'color 0.2s',
               }}
             >
-              {[0, 1, 2].map(i => (
-                <span key={i} style={{
-                  display: 'block',
-                  width: '22px',
-                  height: '2px',
-                  borderRadius: '2px',
-                  background: 'var(--text-2)',
-                  transition: 'transform 0.3s, opacity 0.3s',
-                  transform: open
-                    ? i === 0 ? 'translateY(7px) rotate(45deg)'
-                    : i === 2 ? 'translateY(-7px) rotate(-45deg)' : 'none'
-                    : 'none',
-                  opacity: open && i === 1 ? 0 : 1,
-                }} />
-              ))}
+              {open ? (
+                <span style={{ lineHeight: 1, fontSize: '1.3rem' }}>✕</span>
+              ) : (
+                <span style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+                  {[0, 1, 2].map(i => (
+                    <span key={i} style={{
+                      display: 'block',
+                      width: '22px',
+                      height: '2px',
+                      borderRadius: '2px',
+                      background: '#9aa398',
+                    }} />
+                  ))}
+                </span>
+              )}
             </button>
           )}
         </div>
@@ -141,29 +145,30 @@ export default function Nav() {
       {/* RIGHT-SIDE DRAWER — mobile only */}
       {isMobile && (
         <>
-          {/* Backdrop */}
+          {/* Backdrop — full screen */}
           <div
             onClick={close}
             style={{
               position: 'fixed',
               inset: 0,
               zIndex: 48,
-              background: 'rgba(0,0,0,0.6)',
+              background: 'rgba(0,0,0,0.75)',
               opacity: open ? 1 : 0,
               pointerEvents: open ? 'all' : 'none',
               transition: 'opacity 0.3s ease',
             }}
           />
 
-          {/* Drawer panel */}
+          {/* Drawer panel — full height, own header */}
           <div
             style={{
               position: 'fixed',
               top: 0,
               right: 0,
               bottom: 0,
-              width: '280px',
-              zIndex: 49,
+              width: '82vw',
+              maxWidth: '340px',
+              zIndex: 51,
               background: '#0d0f0e',
               borderLeft: '1px solid #2a2e2b',
               transform: open ? 'translateX(0)' : 'translateX(100%)',
@@ -172,22 +177,55 @@ export default function Nav() {
               flexDirection: 'column',
             }}
           >
-            {/* Drawer header */}
+            {/* Drawer header — brand identity with logo, name, and close */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              padding: '0 1.5rem',
-              height: '60px',
+              padding: '0 1.25rem',
+              height: '64px',
               borderBottom: '1px solid #2a2e2b',
+              flexShrink: 0,
             }}>
-              <span style={{
-                fontFamily: '"JetBrains Mono", monospace',
-                fontSize: '0.75rem',
-                letterSpacing: '0.14em',
-                textTransform: 'uppercase',
-                color: 'var(--accent)',
-              }}>Menu</span>
+              {/* Brand */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                {/* Logo mark — square with E monogram, mirrors E.Excel's gold square */}
+                <div style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '8px',
+                  background: 'rgba(74,222,128,0.12)',
+                  border: '1px solid rgba(74,222,128,0.3)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                }}>
+                  <Monogram size={22} />
+                </div>
+                {/* Name */}
+                <div>
+                  <p style={{
+                    fontFamily: '"JetBrains Mono", monospace',
+                    fontSize: '0.82rem',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: '#4ade80',
+                    lineHeight: 1,
+                    margin: 0,
+                  }}>Emcent</p>
+                  <p style={{
+                    fontFamily: '"JetBrains Mono", monospace',
+                    fontSize: '0.58rem',
+                    letterSpacing: '0.08em',
+                    color: '#6b7069',
+                    marginTop: '0.25rem',
+                    margin: '0.25rem 0 0',
+                  }}>Emekwue Innocent</p>
+                </div>
+              </div>
+
+              {/* Close button */}
               <button
                 onClick={close}
                 aria-label="Close menu"
@@ -196,16 +234,24 @@ export default function Nav() {
                   border: 'none',
                   outline: 'none',
                   cursor: 'pointer',
-                  color: 'var(--text-2)',
-                  fontSize: '1.4rem',
+                  color: '#9aa398',
+                  fontSize: '1.25rem',
                   lineHeight: 1,
-                  padding: '4px',
+                  padding: '6px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}
               >✕</button>
             </div>
 
             {/* Drawer links */}
-            <nav style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '1rem 0' }}>
+            <nav style={{
+              display: 'flex',
+              flexDirection: 'column',
+              padding: '0.5rem 0',
+              flexShrink: 0,
+            }}>
               {links.map(l => (
                 <a
                   key={l}
@@ -216,25 +262,43 @@ export default function Nav() {
                     fontSize: '1.05rem',
                     fontWeight: 500,
                     textDecoration: 'none',
-                    color: 'var(--text-2)',
+                    color: '#9aa398',
                     borderBottom: '1px solid #1a1d1b',
                     transition: 'color 0.2s, background 0.2s',
                     letterSpacing: '0.02em',
                   }}
                   onMouseEnter={e => {
-                    e.currentTarget.style.color = 'var(--accent)'
+                    e.currentTarget.style.color = '#4ade80'
                     e.currentTarget.style.background = '#131614'
                   }}
                   onMouseLeave={e => {
-                    e.currentTarget.style.color = 'var(--text-2)'
+                    e.currentTarget.style.color = '#9aa398'
                     e.currentTarget.style.background = 'transparent'
                   }}
                 >{l}</a>
               ))}
             </nav>
 
+            {/* Spacer */}
+            <div style={{ flex: 1 }} />
+
             {/* Drawer footer */}
-            <div style={{ padding: '1.5rem' }}>
+            <div style={{
+              padding: '1.5rem',
+              borderTop: '1px solid #1a1d1b',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.75rem',
+            }}>
+              <p style={{
+                fontFamily: '"JetBrains Mono", monospace',
+                fontSize: '0.65rem',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: '#4ade80',
+                textAlign: 'center',
+                margin: 0,
+              }}>● Available for opportunities</p>
               <a
                 href={personal.linkedin}
                 target="_blank"
@@ -245,10 +309,10 @@ export default function Nav() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '100%',
-                  padding: '0.75rem',
+                  padding: '0.875rem',
                   borderRadius: '8px',
-                  background: 'var(--accent)',
-                  color: 'var(--bg)',
+                  background: '#4ade80',
+                  color: '#0d0f0e',
                   fontSize: '0.875rem',
                   fontWeight: 600,
                   textDecoration: 'none',
