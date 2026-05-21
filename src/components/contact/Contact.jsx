@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import { personal } from '../../data'
 import { analytics } from '../../analytics'
-import Toast from '../ui/Toast'
+import SuccessModal from '../ui/SuccessModal'
 
 const L = {
   bg:      '#f5f7f2',
@@ -53,9 +53,9 @@ const inputStyle = {
 
 export default function Contact() {
   const [status, setStatus] = useState('idle')
-  const [toast, setToast] = useState(null)
+  const [showModal, setShowModal] = useState(false)
 
-  const dismissToast = useCallback(() => setToast(null), [])
+  const dismissModal = useCallback(() => setShowModal(false), [])
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -70,27 +70,19 @@ export default function Contact() {
         analytics.contactFormSubmit()
         setStatus('success')
         e.target.reset()
-        setToast({ type: 'success', message: "I'll be in touch soon — usually within 24 hours." })
+        setShowModal(true)
       } else {
         setStatus('error')
-        setToast({ type: 'error', message: 'Please try again or reach out via LinkedIn.' })
       }
     } catch {
       setStatus('error')
-      setToast({ type: 'error', message: 'Please try again or reach out via LinkedIn.' })
     }
   }
 
   return (
     <>
-      {/* Toast notification */}
-      {toast && (
-        <Toast
-          message={toast.message}
-          type={toast.type}
-          onClose={dismissToast}
-        />
-      )}
+      {/* Success modal */}
+      {showModal && <SuccessModal onClose={dismissModal} />}
 
       <section id="contact" style={{ background: L.bg, padding: 'clamp(3rem, 6vw, 6rem) clamp(1.25rem, 4vw, 2.5rem)' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -164,6 +156,11 @@ export default function Contact() {
             >
               {status === 'sending' ? 'Sending…' : status === 'success' ? 'Sent ✓' : 'Send Message →'}
             </button>
+            {status === 'error' && (
+              <p style={{ fontSize: '0.82rem', color: '#dc2626', textAlign: 'center' }}>
+                Something went wrong — please try again or reach out via LinkedIn.
+              </p>
+            )}
           </form>
 
         </div>
