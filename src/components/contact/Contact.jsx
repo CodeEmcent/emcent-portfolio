@@ -1,3 +1,4 @@
+import { analytics } from '../../analytics'
 import { useState } from 'react'
 import { personal } from '../../data'
 
@@ -31,9 +32,27 @@ const EmailIcon = () => (
 )
 
 const contactLinks = [
-  { href: personal.linkedin,           icon: <LinkedInIcon />, label: 'LinkedIn', value: 'Chukwuemeka Innocent Emekwue' },
-  { href: personal.github,             icon: <GithubIcon />,   label: 'GitHub',   value: 'github.com/CodeEmcent' },
-  { href: `mailto:${personal.email}`,  icon: <EmailIcon />,    label: 'Email',    value: personal.email },
+  {
+    href: personal.linkedin,
+    icon: <LinkedInIcon />,
+    label: 'LinkedIn',
+    value: 'Chukwuemeka Innocent Emekwue',
+    onClick: () => analytics.linkedInClick(),
+  },
+  {
+    href: personal.github,
+    icon: <GithubIcon />,
+    label: 'GitHub',
+    value: 'github.com/CodeEmcent',
+    onClick: () => analytics.githubClick(),
+  },
+  {
+    href: `mailto:${personal.email}`,
+    icon: <EmailIcon />,
+    label: 'Email',
+    value: personal.email,
+    onClick: () => analytics.emailClick(),
+  },
 ]
 
 const inputStyle = {
@@ -61,7 +80,10 @@ export default function Contact() {
         body: new FormData(e.target),
         headers: { Accept: 'application/json' },
       })
-      if (res.ok) { setStatus('success'); e.target.reset() }
+      if (res.ok) { 
+        analytics.contactFormSubmit()
+        setStatus('success'); 
+        e.target.reset() }
       else setStatus('error')
     } catch { setStatus('error') }
   }
@@ -89,20 +111,25 @@ export default function Contact() {
               Whether you're looking for a systems thinker, a developer, or someone who bridges both — I'd like to hear from you. Open to graduate roles, consulting opportunities, and project collaborations.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {contactLinks.map(({ href, icon, label, value }) => (
-                <a key={label} href={href} target="_blank" rel="noreferrer"
-                  style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem 1.5rem', borderRadius: '12px', border: `1px solid ${L.border}`, background: L.surface, textDecoration: 'none', color: L.text, transition: 'border-color 0.2s' }}
-                  onMouseEnter={e => e.currentTarget.style.borderColor = L.accent}
-                  onMouseLeave={e => e.currentTarget.style.borderColor = L.border}
-                >
-                  <span style={{ color: L.text3 }}>{icon}</span>
-                  <div>
-                    <p style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.68rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: L.text3 }}>{label}</p>
-                    <p style={{ fontSize: '0.9rem', fontWeight: 500, color: L.text, marginTop: '0.15rem' }}>{value}</p>
-                  </div>
-                  <span style={{ marginLeft: 'auto', color: L.text3 }}>↗</span>
-                </a>
-              ))}
+              {contactLinks.map(({ href, icon, label, value, onClick }) => (
+                <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                onClick={onClick}
+                style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1.25rem 1.5rem', borderRadius: '12px', border: `1px solid ${L.border}`, background: L.surface, textDecoration: 'none', color: L.text, transition: 'border-color 0.2s' }}
+                onMouseEnter={e => e.currentTarget.style.borderColor = L.accent}
+                onMouseLeave={e => e.currentTarget.style.borderColor = L.border}
+              >
+                <span style={{ color: L.text3 }}>{icon}</span>
+                <div>
+                  <p style={{ fontFamily: '"JetBrains Mono",monospace', fontSize: '0.68rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: L.text3 }}>{label}</p>
+                  <p style={{ fontSize: '0.9rem', fontWeight: 500, color: L.text, marginTop: '0.15rem' }}>{value}</p>
+                </div>
+                <span style={{ marginLeft: 'auto', color: L.text3 }}>↗</span>
+              </a>
+            ))}
             </div>
           </div>
 
