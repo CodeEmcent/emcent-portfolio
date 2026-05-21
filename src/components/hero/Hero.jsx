@@ -1,3 +1,4 @@
+import { analytics } from '../../analytics'
 import Monogram from '../ui/Monogram'
 import { personal, stats, heroStack } from '../../data'
 
@@ -83,14 +84,15 @@ export default function Hero() {
         {/* Socials */}
         <div className="animate-fade-up delay-600 flex gap-3">
           {[
-            { href: personal.linkedin, icon: <LinkedInIcon />, label: 'LinkedIn' },
-            { href: personal.github,   icon: <GithubIcon />,   label: 'GitHub' },
-          ].map(({ href, icon, label }) => (
+            { href: personal.linkedin, icon: <LinkedInIcon />, label: 'LinkedIn', onClick: () => analytics.linkedInClick() },
+            { href: personal.github,   icon: <GithubIcon />,   label: 'GitHub',  onClick: () => analytics.githubClick() },
+          ].map(({ href, icon, label, onClick }) => (
             <a
               key={label}
               href={href}
               target="_blank"
               rel="noreferrer"
+              onClick={onClick}
               className="flex items-center justify-center w-10 h-10 rounded-lg border transition-all duration-200"
               style={{ borderColor: 'var(--border)', color: 'var(--text-3)' }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
