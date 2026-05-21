@@ -28,6 +28,7 @@ export default function App() {
       </main>
       <Divider />
       <Footer />
+      <Analytics />
     </div>
   )
 }
