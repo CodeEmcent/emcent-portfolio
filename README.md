@@ -43,5 +43,6 @@ A personal portfolio built with React, Vite, and Tailwind CSS — designed to pr
 
 ## Licence
 
+```text id="jlwm44"
 This portfolio is personal and not open for reuse.  
 © 2026 Emekwue Innocent Chukwuemeka — All rights reserved.
