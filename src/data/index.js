@@ -231,7 +231,7 @@ export const certifications = {
       name: 'Microsoft Azure Fundamentals (AZ900) Cert Prep by Microsoft Press',
       issuer: 'LinkedIn Learning  · Microsoft Azure · Data Governance',
       date: 'May 2026',
-      link: 'https://learn.microsoft.com/api/credentials/share/en-us/ChukwuemekaInnocentEmekwue-4687/408F7A7A28550C21?sharingId',
+      link: 'https://www.linkedin.com/learning/certificates/71a98ba2e9c296e50f2aeb0d8933517a8bc606bde18cd68db836fa7307b85d79',
     },
     {
       name: 'The Role of Business Analysis in Data Analytics',
