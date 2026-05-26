@@ -108,27 +108,6 @@ export default function Skills() {
           {certifications.professional.map(c => <CertCard key={c.name} cert={c} />)}
         </div>
 
-        {/* Azure pending */}
-        <div
-          className="flex items-center gap-4 p-5 rounded-xl mt-5 border"
-          style={{ background: 'rgba(74,222,128,0.05)', borderColor: 'rgba(74,222,128,0.3)', borderStyle: 'dashed' }}
-        >
-          <div className="flex-shrink-0 flex items-center justify-center rounded-xl overflow-hidden"
-            style={{ width: 44, height: 44, background: 'var(--surface)', border: '1px solid var(--border)' }}>
-            <CertLogo issuer="Microsoft Azure" size={34} />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>{certifications.pending.name}</p>
-            <p className="text-xs mt-0.5" style={{ color: 'var(--text-3)' }}>{certifications.pending.date} · {certifications.pending.issuer}</p>
-          </div>
-          <span
-            className="font-mono text-[0.67rem] px-3 py-1 rounded-full border whitespace-nowrap"
-            style={{ background: 'rgba(74,222,128,0.1)', borderColor: 'rgba(74,222,128,0.25)', color: 'var(--accent)' }}
-          >
-            Awaiting Exam
-          </span>
-        </div>
-
         {/* LinkedIn Learning */}
         <p className="font-mono text-[0.68rem] tracking-[0.15em] uppercase mt-10 mb-4" style={{ color: 'var(--text-3)' }}>
           LinkedIn Learning · Continuous Development

@@ -186,6 +186,22 @@ export const projects = [
 export const certifications = {
   professional: [
     {
+      name: 'Microsoft Azure Fundamentals (AZ-900)',
+      issuer: 'Microsoft · Official Certification',
+      date: 'May 2026',
+      icon: '☁️',
+      link: 'https://learn.microsoft.com/api/credentials/share/en-us/ChukwuemekaInnocentEmekwue-4687/408F7A7A28550C21?sharingId',
+      courses: 'Cloud concepts, Azure architecture and services, Azure management and governance',
+    },
+    {
+      name: 'Backend with Python Django',
+      issuer: 'Univelcity · 120 Hours',
+      date: 'Dec 2024',
+      icon: '🎓',
+      link: null,
+      courses: 'Django backend engineering, 120 hours of instruction + final project',
+    },
+    {
       name: 'Meta Front-End Developer',
       issuer: 'Meta · Coursera · 9 Courses',
       date: 'Aug 2023',
@@ -209,21 +225,7 @@ export const certifications = {
       link: 'https://coursera.org/verify/professional-cert/46UW9RGZ424N',
       courses: 'Project Initiation, Planning, Execution, Agile Project Management, Capstone',
     },
-    {
-      name: 'Backend with Python Django',
-      issuer: 'Univelcity · 120 Hours',
-      date: 'Dec 2024',
-      icon: '🎓',
-      link: null,
-      courses: 'Django backend engineering, 120 hours of instruction + final project',
-    },
   ],
-  pending: {
-    name: 'Microsoft Azure Fundamentals (AZ-900)',
-    issuer: 'Microsoft · Official Certification',
-    date: 'Exam pending · Expected May 2026',
-    icon: '☁️',
-  },
   linkedin: [
     {
       name: 'Introduction to Business Analysis',
