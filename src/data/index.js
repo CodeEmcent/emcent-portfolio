@@ -228,16 +228,22 @@ export const certifications = {
   ],
   linkedin: [
     {
-      name: 'Introduction to Business Analysis',
-      issuer: 'LinkedIn Learning · IIBA® Endorsed · 3 CDUs',
-      date: 'Apr 2026',
-      link: 'https://www.linkedin.com/learning/certificates/9fb2a03b4b3d865554a08d2dd4424ed91ecdfc721ea0dad4a502fb71472c309f',
+      name: 'Microsoft Azure Fundamentals (AZ900) Cert Prep by Microsoft Press',
+      issuer: 'LinkedIn Learning  · Microsoft Azure · Data Governance',
+      date: 'May 2026',
+      link: 'https://learn.microsoft.com/api/credentials/share/en-us/ChukwuemekaInnocentEmekwue-4687/408F7A7A28550C21?sharingId',
     },
     {
       name: 'The Role of Business Analysis in Data Analytics',
       issuer: 'LinkedIn Learning · Data Analytics & BA',
       date: 'May 2026',
       link: 'https://www.linkedin.com/learning/certificates/943af2539ea7927a2194d49f866ecdf250b2d6e95569df4ba49c2fa7f238aec5',
+    },
+    {
+      name: 'Introduction to Business Analysis',
+      issuer: 'LinkedIn Learning · IIBA® Endorsed · 3 CDUs',
+      date: 'Apr 2026',
+      link: 'https://www.linkedin.com/learning/certificates/9fb2a03b4b3d865554a08d2dd4424ed91ecdfc721ea0dad4a502fb71472c309f',
     },
     {
       name: 'Software Design: Modeling with UML',
