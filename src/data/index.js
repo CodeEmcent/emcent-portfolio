@@ -10,19 +10,13 @@ export const personal = {
   handle:     'CodeEmcent',
   tagline:    'MSc Management of Business IT graduate — bridging strategy, systems, and software.',
   location:   'London, United Kingdom',
-  origin:     'Lagos, Nigeria',
+  origin:     'Anambra State, Nigeria',
   available:  'Open to opportunities · Sept 2026',
   linkedin:   'https://www.linkedin.com/in/chukwuemeka-innocent-emekwue-64844b153/',
   github:     'https://github.com/CodeEmcent',
   email:      'innocent@emcent.dev',
   formspree:  'https://formspree.io/f/meenwdey',
 }
-
-export const stats = [
-  { num: '4+', label: 'Live Projects' },
-  { num: '3',  label: 'Degrees' },
-  { num: '8+', label: 'Certifications' },
-]
 
 export const heroStack = [
   { label: 'Python',          hi: true },
@@ -151,7 +145,7 @@ export const projects = [
     title: 'Beta Chow Foods',
     description: 'A full-stack food ordering platform built for a Lagos-based restaurant, demonstrating SME digital transformation. Supports customer ordering, real-time order tracking, cart and checkout workflows, and a secure admin dashboard for managing orders, menu items, and customers.',
     stack: ['React','Django REST','PostgreSQL','JWT Auth','Vercel','PythonAnywhere'],
-    linkLabel: 'Assoc. with University of Greenwich →',
+    linkLabel: 'Assoc. with Personal Works →',
   },
   {
     id: 'verilens',
