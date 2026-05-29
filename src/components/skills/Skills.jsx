@@ -1,9 +1,11 @@
 import { competencies, tools, certifications } from '../../data'
 import { CertLogo } from '../ui/CertLogos'
+import AnimateIn from '../ui/AnimateIn'
 
 function CompGroup({ icon, title, subtitle, tags }) {
   return (
-    <div className="p-8 rounded-2xl border" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
+    // height: 100% ensures card stretches to fill grid cell
+    <div className="p-8 rounded-2xl border" style={{ background: 'var(--surface)', borderColor: 'var(--border)', height: '100%' }}>
       <div className="flex items-center gap-3 pb-5 mb-5 border-b" style={{ borderColor: 'var(--border)' }}>
         <span className="text-lg leading-none">{icon}</span>
         <div>
@@ -27,7 +29,6 @@ function CertCard({ cert, size = 'lg' }) {
 
   const inner = (
     <div className="cert-card" style={{ cursor: cert.link ? 'pointer' : 'default' }}>
-      {/* Brand logo */}
       <div
         className="flex-shrink-0 flex items-center justify-center rounded-xl overflow-hidden"
         style={{
@@ -39,18 +40,13 @@ function CertCard({ cert, size = 'lg' }) {
       >
         <CertLogo issuer={cert.issuer} size={logoSize - 10} />
       </div>
-
-      {/* Details */}
       <div className="flex-1 min-w-0">
         <p className="text-sm font-semibold leading-snug" style={{ color: 'var(--text)' }}>{cert.name}</p>
         <p className="font-mono text-[0.68rem] tracking-[0.08em] mt-0.5" style={{ color: 'var(--accent)' }}>{cert.issuer}</p>
         <div className="flex items-center gap-3 flex-wrap mt-1">
           <span className="font-mono text-[0.67rem]" style={{ color: 'var(--text-3)' }}>{cert.date}</span>
           {cert.link && (
-            <span
-              className="font-mono text-[0.67rem] flex items-center gap-1"
-              style={{ color: 'var(--accent)' }}
-            >
+            <span className="font-mono text-[0.67rem] flex items-center gap-1" style={{ color: 'var(--accent)' }}>
               ↗ Verify
             </span>
           )}
@@ -72,49 +68,99 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6 md:px-10" style={{ background: 'var(--bg)' }}>
       <div className="max-w-6xl mx-auto">
-        <p className="section-label">Capabilities</p>
-        <h2 className="font-serif mb-4" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: 'var(--text)', lineHeight: 1.1 }}>
-          Competencies
-        </h2>
-        <p className="text-base leading-[1.75] mb-14 max-w-xl" style={{ color: 'var(--text-2)' }}>
-          A hybrid profile spanning software engineering, systems thinking, UX, and IT management — grounded in real project delivery.
-        </p>
 
-        {/* Competency grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {competencies.map(c => <CompGroup key={c.title} {...c} />)}
+        {/* Eyebrow + heading */}
+        <AnimateIn>
+          <p className="section-label">Capabilities</p>
+          <h2 className="font-serif mb-4" style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', color: 'var(--text)', lineHeight: 1.1 }}>
+            Competencies
+          </h2>
+          <p className="text-base leading-[1.75] mb-14 max-w-xl" style={{ color: 'var(--text-2)' }}>
+            A hybrid profile spanning software engineering, systems thinking, UX, and IT management — grounded in real project delivery.
+          </p>
+        </AnimateIn>
+
+        {/* Competency grid — gridAutoRows: 1fr makes all cards equal height */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8" style={{ gridAutoRows: '1fr' }}>
+          {competencies.map((c, i) => (
+            // height: 100% passes the stretch through the AnimateIn wrapper
+            <AnimateIn key={c.title} delay={i * 100} style={{ height: '100%' }}>
+              <CompGroup {...c} />
+            </AnimateIn>
+          ))}
         </div>
 
         {/* Tools */}
-        <div className="p-7 rounded-2xl border mb-14" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
-          <p className="font-mono text-[0.68rem] tracking-[0.15em] uppercase mb-4" style={{ color: 'var(--text-3)' }}>
-            Tools & Platforms
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {tools.map(t => <span key={t} className="comp-tag">{t}</span>)}
+        <AnimateIn delay={150}>
+          <div className="p-7 rounded-2xl border mb-14" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
+            <p className="font-mono text-[0.68rem] tracking-[0.15em] uppercase mb-4" style={{ color: 'var(--text-3)' }}>
+              Tools & Platforms
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {tools.map(t => <span key={t} className="comp-tag">{t}</span>)}
+            </div>
           </div>
-        </div>
+        </AnimateIn>
 
-        {/* Certifications */}
-        <p className="section-label mt-14">Verified credentials</p>
-        <h3 className="font-serif text-[1.75rem] mb-2" style={{ color: 'var(--text)', lineHeight: 1.1 }}>
-          Professional Certifications
-        </h3>
-        <p className="text-sm mb-6" style={{ color: 'var(--text-2)' }}>
-          Industry-recognised certificates from Google, Meta, and Univelcity — spanning data analytics, project management, front-end development, and backend engineering.
-        </p>
+        {/* Certifications heading */}
+        <AnimateIn>
+          <p className="section-label mt-14">Verified credentials</p>
+          <h3 className="font-serif text-[1.75rem] mb-2" style={{ color: 'var(--text)', lineHeight: 1.1 }}>
+            Professional Certifications
+          </h3>
+          <p className="text-sm mb-6" style={{ color: 'var(--text-2)' }}>
+            Industry-recognised certificates from Google, Meta, Microsoft, and Univelcity — spanning data analytics, project management, front-end development, backend engineering, and cloud computing.
+          </p>
+        </AnimateIn>
 
+        {/* Professional certs — staggered */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {certifications.professional.map(c => <CertCard key={c.name} cert={c} />)}
+          {certifications.professional.map((c, i) => (
+            <AnimateIn key={c.name} delay={i * 80}>
+              <CertCard cert={c} />
+            </AnimateIn>
+          ))}
         </div>
+
+        {/* Pending cert */}
+        {certifications.pending && (
+          <AnimateIn delay={200}>
+            <div
+              className="flex items-center gap-4 p-5 rounded-xl mt-5 border"
+              style={{ background: 'rgba(74,222,128,0.05)', borderColor: 'rgba(74,222,128,0.3)', borderStyle: 'dashed' }}
+            >
+              <div className="flex-shrink-0 flex items-center justify-center rounded-xl overflow-hidden"
+                style={{ width: 44, height: 44, background: 'var(--surface)', border: '1px solid var(--border)' }}>
+                <CertLogo issuer="Microsoft Azure" size={34} />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm font-semibold" style={{ color: 'var(--accent)' }}>{certifications.pending.name}</p>
+                <p className="text-xs mt-0.5" style={{ color: 'var(--text-3)' }}>{certifications.pending.date} · {certifications.pending.issuer}</p>
+              </div>
+              <span
+                className="font-mono text-[0.67rem] px-3 py-1 rounded-full border whitespace-nowrap"
+                style={{ background: 'rgba(74,222,128,0.1)', borderColor: 'rgba(74,222,128,0.25)', color: 'var(--accent)' }}
+              >
+                Awaiting Exam
+              </span>
+            </div>
+          </AnimateIn>
+        )}
 
         {/* LinkedIn Learning */}
-        <p className="font-mono text-[0.68rem] tracking-[0.15em] uppercase mt-10 mb-4" style={{ color: 'var(--text-3)' }}>
-          LinkedIn Learning · Continuous Development
-        </p>
+        <AnimateIn delay={100}>
+          <p className="font-mono text-[0.68rem] tracking-[0.15em] uppercase mt-10 mb-4" style={{ color: 'var(--text-3)' }}>
+            LinkedIn Learning · Continuous Development
+          </p>
+        </AnimateIn>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {certifications.linkedin.map(c => <CertCard key={c.name} cert={c} size="sm" />)}
+          {certifications.linkedin.map((c, i) => (
+            <AnimateIn key={c.name} delay={i * 60}>
+              <CertCard cert={c} size="sm" />
+            </AnimateIn>
+          ))}
         </div>
+
       </div>
     </section>
   )
