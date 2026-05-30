@@ -12,7 +12,7 @@ export const personal = {
   location:   'London, United Kingdom',
   origin:     'Anambra State, Nigeria',
   available:  'Open to opportunities · Sept 2026',
-  linkedin:   'https://www.linkedin.com/in/chukwuemeka-innocent-emekwue-64844b153/',
+  linkedin:   'https://www.linkedin.com/in/chukwuemeka-innocent-emekwue/',
   github:     'https://github.com/CodeEmcent',
   email:      'innocent@emcent.dev',
   formspree:  'https://formspree.io/f/meenwdey',
