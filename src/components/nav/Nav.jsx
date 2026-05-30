@@ -8,7 +8,6 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Detect mobile — hamburger only shows below 768px
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
     check()
@@ -16,7 +15,6 @@ export default function Nav() {
     return () => window.removeEventListener('resize', check)
   }, [])
 
-  // Prevent body scroll when drawer open
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -42,8 +40,12 @@ export default function Nav() {
   return (
     <>
       <nav style={navStyle}>
-        {/* Brand */}
-        <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+        {/* Brand — onClick closes drawer if open, href scrolls to hero */}
+        <a
+          href="#hero"
+          onClick={close}
+          style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}
+        >
           <span style={{ color: 'var(--accent)', display: 'flex' }}><Monogram size={26} /></span>
           <span style={{
             fontFamily: '"JetBrains Mono", monospace',
@@ -54,7 +56,7 @@ export default function Nav() {
           }}>Emcent</span>
         </a>
 
-        {/* Desktop links — only when not mobile */}
+        {/* Desktop links */}
         {!isMobile && (
           <ul style={{ display: 'flex', gap: '2.5rem', listStyle: 'none', margin: 0, padding: 0 }}>
             {links.map(l => (
@@ -80,7 +82,6 @@ export default function Nav() {
 
         {/* Right side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          {/* Connect — desktop only */}
           {!isMobile && (
             <a
               href={personal.linkedin}
@@ -102,7 +103,6 @@ export default function Nav() {
             >Connect →</a>
           )}
 
-          {/* Hamburger — mobile only, shows X when open */}
           {isMobile && (
             <button
               onClick={() => setOpen(o => !o)}
@@ -118,7 +118,6 @@ export default function Nav() {
                 outline: 'none',
                 cursor: 'pointer',
                 color: '#9aa398',
-                fontSize: open ? '1.3rem' : undefined,
                 transition: 'color 0.2s',
               }}
             >
@@ -145,7 +144,7 @@ export default function Nav() {
       {/* RIGHT-SIDE DRAWER — mobile only */}
       {isMobile && (
         <>
-          {/* Backdrop — full screen */}
+          {/* Backdrop */}
           <div
             onClick={close}
             style={{
@@ -159,7 +158,7 @@ export default function Nav() {
             }}
           />
 
-          {/* Drawer panel — full height, own header */}
+          {/* Drawer panel */}
           <div
             style={{
               position: 'fixed',
@@ -177,7 +176,7 @@ export default function Nav() {
               flexDirection: 'column',
             }}
           >
-            {/* Drawer header — brand identity with logo, name, and close */}
+            {/* Drawer header */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
@@ -187,9 +186,12 @@ export default function Nav() {
               borderBottom: '1px solid #2a2e2b',
               flexShrink: 0,
             }}>
-              {/* Brand */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                {/* Logo mark — square with E monogram, mirrors E.Excel's gold square */}
+              {/* Brand — clicking closes drawer and scrolls to hero */}
+              <a
+                href="#hero"
+                onClick={close}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}
+              >
                 <div style={{
                   width: '36px',
                   height: '36px',
@@ -203,7 +205,6 @@ export default function Nav() {
                 }}>
                   <Monogram size={22} />
                 </div>
-                {/* Name */}
                 <div>
                   <p style={{
                     fontFamily: '"JetBrains Mono", monospace',
@@ -219,11 +220,10 @@ export default function Nav() {
                     fontSize: '0.58rem',
                     letterSpacing: '0.08em',
                     color: '#6b7069',
-                    marginTop: '0.25rem',
                     margin: '0.25rem 0 0',
                   }}>Emekwue Innocent Chukwuemeka</p>
                 </div>
-              </div>
+              </a>
 
               {/* Close button */}
               <button
