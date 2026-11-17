@@ -130,13 +130,13 @@ export const projects = [
   {
     id: 'fms',
     featured: true,
-    tags: ['Dissertation', 'Full-Stack'],
+    tags: ['Dissertation', 'Live SaaS'],
     year: '2025–2026',
     title: 'Emcent Facilities Management System',
-    description: 'A full-stack digital asset and inventory management system designed for facilities management SME operations. Built on a three-tier architecture with a Django REST API backend, PostgreSQL database, and React frontend, Emcent FMS delivers real-time asset tracking, maintenance scheduling, location-based inventory management, and role-based access control. Designed following the Design Science Research Methodology (DSRM) and evaluated against the DeLone & McLean IS success model.',
-    stack: ['Python','Django REST','React','PostgreSQL','JWT','DSRM'],
-    link: 'https://github.com/CodeEmcent',
-    linkLabel: 'View on GitHub →',
+    description: 'A production-deployed, multi-tenant facility management platform, built as my MSc dissertation artefact. Organisations configure their own location hierarchy and vocabulary, track assets and inventory with bulk Excel upload, and run corrective maintenance through a full vendor lifecycle — quotation, authorisation, work, and sign-off. Seven-role access control, audit logging, and real-time WebSocket notifications keep operations accountable. Designed using the Design Science Research Methodology and evaluated using the FEDS framework.',
+    stack: ['Python','Django REST','React','PostgreSQL','WebSockets','Azure','DSRM'],
+    link: 'https://emcentfms.com',
+    linkLabel: 'Visit live platform →',
   },
   {
     id: 'betachow',
@@ -257,7 +257,7 @@ export const certifications = {
 export const experience = {
   education: [
     {
-      period: 'Sept 2025 – Sept 2026',
+      period: '2025 – 2026',
       title: 'MSc Management of Business Information Technology (MBIT) — Pass with Distinction',
       org: 'University of Greenwich, London',
       desc: 'Modules spanning Systems Analysis & Design, UX Design, Strategic IT, Software Quality Management, IT Security & Risk, Project Management, and Systems Modelling. Dissertation: Emcent FMS — a full-stack digital asset and inventory management system.',
