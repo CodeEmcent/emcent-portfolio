@@ -275,7 +275,13 @@ export const experience = {
       desc: 'Awarded First Class Honours. Explored the philosophy of mind, logic, and African philosophy — developing structured reasoning and written communication skills that now inform how I frame technical problems and communicate systems to non-technical stakeholders.',
     },
   ],
-  work: [
+    work: [
+    {
+      period: '2025 – 2026',
+      title: 'Lead Developer & Researcher',
+      org: 'Emcent Facilities Management System — MSc Dissertation',
+      desc: 'Designed, built and deployed a production multi-tenant facility management platform (React, Django REST Framework, PostgreSQL, Django Channels) with seven-role access control, audit logging and real-time notifications. Followed Design Science Research Methodology end-to-end, from problem identification through artefact design and development to evaluation.',
+    },
     {
       period: '2026 — In Progress',
       title: 'Web Developer & Systems Designer',
@@ -283,28 +289,28 @@ export const experience = {
       desc: 'Scoped, designed, and leading development of a full business website for a Lagos-based electrical accessories supplier — covering UX, system design, and deployment.',
     },
     {
-      period: 'Sept 2025 – Present',
-      title: 'Lead Developer & Researcher',
-      org: 'Emcent Facilities Management System — MSc Dissertation',
-      desc: 'Designing and building a full-stack digital asset and inventory management system for facilities management SME operations. Follows DSRM end-to-end — from problem identification through artefact design, development, and evaluation against the DeLone & McLean IS success model.',
+      period: 'Oct 2025 – Present',
+      title: 'Retail Security Officer (SIA-licensed) · previously Customer Service Assistant',
+      org: 'Mitie Security · Tenpin Ltd — London',
+      desc: 'Worked part-time as a Customer Service Assistant at Tenpin Ltd (Oct 2025 – Jul 2026), serving 20+ customers per shift and named Employee of the Month (May 2026), then moved to full-time retail security with Mitie Security (Sep 2026 – present). SIA-licensed (Door Supervisor; CCTV Public Space Surveillance), with ACT Security, ACT Awareness, First Aid at Work and Enhanced DBS credentials.',
     },
     {
-      period: 'Sept 2023 – June 2025',
-      title: 'Facility Manager',
+      period: 'Sep 2022 – Aug 2025',
+      title: 'Facilities Manager (Maintenance Officer)',
       org: 'Our Lady of Apostles Secondary School (OLASS), Yaba, Lagos',
       desc: 'Managed facilities operations — asset tracking, maintenance scheduling, inventory management, and vendor coordination — for a large secondary school institution. This hands-on experience directly informed the design and scope of Emcent FMS: a digital system built to solve the exact operational problems encountered in this role.',
     },
     {
-      period: 'Sept 2022 – June 2023',
+      period: 'Mar 2020 – Sep 2022',
       title: 'Examinations Officer & Analyst',
       org: 'Our Lady of Apostles Secondary School (OLASS), Yaba, Lagos',
-      desc: 'Led examination logistics and data analysis for student cohorts. Managed data integrity, reporting pipelines, and process coordination under strict regulatory timelines — developing skills in structured data management, analytical reporting, and institutional process design.',
+      desc: 'Led examination logistics and data analysis for student cohorts. Managed data integrity, reporting pipelines, and process coordination under strict regulatory timelines — developing skills in structured data management, analytical reporting, and institutional process design. Held alongside teaching duties.',
     },
     {
-      period: 'Jan 2018 – June 2022',
+      period: 'Jan 2018 – Mar 2023',
       title: 'Teacher — Civic Education',
       org: 'Our Lady of Apostles Secondary School (OLASS), Yaba, Lagos',
-      desc: 'Delivered civic education curriculum to secondary school students over four years. Developed skills in structured communication, audience-appropriate explanation, and curriculum design — capabilities now applied to technical documentation, stakeholder reporting, and systems communication.',
+      desc: 'Delivered civic education curriculum to secondary school students over five years, retaining the role through two internal promotions until a successor was found. Developed skills in structured communication, audience-appropriate explanation, and curriculum design — capabilities now applied to technical documentation, stakeholder reporting, and systems communication.',
     },
     {
       period: '2010 to 2025',
