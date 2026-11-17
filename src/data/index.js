@@ -8,10 +8,10 @@ export const personal = {
   name:       'Emekwue Innocent Chukwuemeka',
   brand:      'Emcent',
   handle:     'CodeEmcent',
-  tagline:    'MSc Management of Business IT graduate — bridging strategy, systems, and software.',
+  tagline:    'MSc Management of Business IT (Pass with Distinction) — bridging strategy, systems, and software.',
   location:   'London, United Kingdom',
   origin:     'Anambra State, Nigeria',
-  available:  'Open to opportunities · Sept 2026',
+  available:  'Open to IT consulting & graduate roles',
   linkedin:   'https://www.linkedin.com/in/chukwuemeka-innocent-emekwue/',
   github:     'https://github.com/CodeEmcent',
   email:      'innocent@emcent.dev',
@@ -31,18 +31,19 @@ export const heroStack = [
 
 export const about = {
   paragraphs: [
-    `I am <strong>Emekwue Innocent Chukwuemeka</strong> — known professionally as <strong>Emcent</strong> — a management of business IT graduate with an unusual background: I began with Philosophy, earning degrees (First Class Honours and Summa Cum Laude) from Imo State University and the Pontifical Urbaniana University in Rome, before pivoting fully into information systems and software development.`,
+    `I am <strong>Emekwue Innocent Chukwuemeka</strong> — known professionally as <strong>Emcent</strong> — a management of business IT graduate with an unusual background: I began with Philosophy, earning degrees (First Class Honours and Summa Cum Laude) from Imo State University, Owerri and the Pontifical Urbaniana University in Rome, before pivoting fully into information systems and software development.`,
     `That grounding in rigorous thinking shapes how I approach technology. I don't just build systems — I interrogate why they should exist, how they serve people, and where they might fail. It's what drew me to the intersection of <strong>business strategy, systems design, and full-stack development</strong>.`,
     `Before IT, I spent seven years at Our Lady of Apostles Secondary School in Lagos — progressing from Teacher to Examinations Officer & Analyst to <strong>Facility Manager</strong>. That final role, managing assets, maintenance, and inventory for a large institution, directly shaped my MSc dissertation: Emcent FMS is not a theoretical exercise — it was built to solve problems I experienced first-hand in a real facility.`,
-    `At Greenwich, I have designed and built Emcent FMS end-to-end, led UX research (VeriLens), produced systems analysis work (BUBO), and delivered a strategic IS implementation report. I've also served on five magazine editorial boards and one academic journal board, including as <strong>Editor-in-Chief</strong>, and authored a published book — a background that shapes how I communicate complex systems clearly to non-technical stakeholders.`,
+    `At Greenwich, I designed and built Emcent FMS end-to-end — now a production-deployed, multi-tenant platform that I continue to develop — led UX research (VeriLens), produced systems analysis work (BUBO), and delivered a strategic IS implementation report, graduating with a Pass with Distinction. I've also served on five magazine editorial boards and one academic journal board, including as <strong>Editor-in-Chief</strong>, and authored a published book (The Question of Social Conscience: A Personal Reflection) — a background that shapes how I communicate complex systems clearly to non-technical stakeholders.`,
     `I'm based in London, targeting roles in consulting, business analysis, systems development, and IT strategy — anywhere rigorous thinking and precise communication go hand in hand.`,
   ],
   details: [
-    { icon: '🎓', label: 'Education',    value: 'MSc Management of Business IT (MBIT)',  sub: 'University of Greenwich · 2025–2026' },
+    { icon: '🎓', label: 'Education',    value: 'MSc Management of Business IT (MBIT)',  sub: 'University of Greenwich · Pass with Distinction · 2026' },
     { icon: '📍', label: 'Location',     value: 'London, United Kingdom' },
     { icon: '🌍', label: 'From',         value: 'Anambra State, Nigeria' },
-    { icon: '💼', label: 'Experience',   value: 'Facility Manager · Teacher · Analyst',   sub: 'OLASS, Yaba, Lagos · 2018–2025' },
-    { icon: '📅', label: 'Availability', value: 'Open to opportunities · Sept 2026' },
+    { icon: '💼', label: 'Experience - In Nigeria',   value: 'Facilities Manager · Examinations Officer · Teacher',   sub: 'OLASS, Yaba, Lagos · 2018–2025' },
+    { icon: '🏙️', label: 'Experience - In London',    value: 'Retail Security Officer · Customer Service',   sub: 'Mitie Security · Tenpin Ltd · 2025–present' },
+    { icon: '📅', label: 'Availability', value: 'Open to IT consulting & graduate roles' },
     { icon: '🔗', label: 'GitHub',       value: 'github.com/CodeEmcent', link: 'https://github.com/CodeEmcent' },
   ],
 }
@@ -130,13 +131,13 @@ export const projects = [
   {
     id: 'fms',
     featured: true,
-    tags: ['Dissertation', 'Full-Stack'],
-    year: '2025–2026',
+    tags: ['Live SaaS', 'In Active Development'],
+    year: '2025 – Present',
     title: 'Emcent Facilities Management System',
-    description: 'A full-stack digital asset and inventory management system designed for facilities management SME operations. Built on a three-tier architecture with a Django REST API backend, PostgreSQL database, and React frontend, Emcent FMS delivers real-time asset tracking, maintenance scheduling, location-based inventory management, and role-based access control. Designed following the Design Science Research Methodology (DSRM) and evaluated against the DeLone & McLean IS success model.',
-    stack: ['Python','Django REST','React','PostgreSQL','JWT','DSRM'],
-    link: 'https://github.com/CodeEmcent',
-    linkLabel: 'View on GitHub →',
+    description: 'A production-deployed, multi-tenant facility management platform — originally my MSc dissertation artefact, now in active development. Organisations configure their own location hierarchy and vocabulary, track assets and inventory with bulk Excel upload, and run corrective maintenance through a full vendor lifecycle — quotation, authorisation, work, and sign-off. Seven-role access control, audit logging, and real-time WebSocket notifications keep operations accountable. Designed using the Design Science Research Methodology and evaluated using the FEDS framework.',
+    stack: ['Python','Django REST','React','PostgreSQL','WebSockets','Azure','DSRM'],
+    link: 'https://emcentfms.com',
+    linkLabel: 'Visit live platform →',
   },
   {
     id: 'betachow',
@@ -257,8 +258,8 @@ export const certifications = {
 export const experience = {
   education: [
     {
-      period: 'Sept 2025 – Sept 2026',
-      title: 'MSc Management of Business Information Technology (MBIT)',
+      period: '2025 – 2026',
+      title: 'MSc Management of Business Information Technology (MBIT) — Pass with Distinction',
       org: 'University of Greenwich, London',
       desc: 'Modules spanning Systems Analysis & Design, UX Design, Strategic IT, Software Quality Management, IT Security & Risk, Project Management, and Systems Modelling. Dissertation: Emcent FMS — a full-stack digital asset and inventory management system.',
     },
@@ -275,7 +276,13 @@ export const experience = {
       desc: 'Awarded First Class Honours. Explored the philosophy of mind, logic, and African philosophy — developing structured reasoning and written communication skills that now inform how I frame technical problems and communicate systems to non-technical stakeholders.',
     },
   ],
-  work: [
+    work: [
+    {
+      period: '2025 – Present',
+      title: 'Founder & Lead Developer',
+      org: 'Emcent Facilities Management System — emcentfms.com',
+      desc: 'Designed, built and deployed a production multi-tenant facility management platform (React, Django REST Framework, PostgreSQL, Django Channels) with seven-role access control, audit logging and real-time notifications. Began as my MSc dissertation artefact, built using Design Science Research Methodology, and is now in active development as a commercial product.',
+    },
     {
       period: '2026 — In Progress',
       title: 'Web Developer & Systems Designer',
@@ -283,28 +290,34 @@ export const experience = {
       desc: 'Scoped, designed, and leading development of a full business website for a Lagos-based electrical accessories supplier — covering UX, system design, and deployment.',
     },
     {
-      period: 'Sept 2025 – Present',
-      title: 'Lead Developer & Researcher',
-      org: 'Emcent Facilities Management System — MSc Dissertation',
-      desc: 'Designing and building a full-stack digital asset and inventory management system for facilities management SME operations. Follows DSRM end-to-end — from problem identification through artefact design, development, and evaluation against the DeLone & McLean IS success model.',
+      period: 'Sep 2026 – Present',
+      title: 'Retail Security Officer (SIA-licensed)',
+      org: 'Mitie Security — London · Full-time',
+      desc: 'SIA-licensed (Door Supervisor; CCTV Public Space Surveillance) security officer delivering security operations across London. Holds ACT Security, ACT Awareness, First Aid at Work and Enhanced DBS credentials.',
     },
     {
-      period: 'Sept 2023 – June 2025',
-      title: 'Facility Manager',
+      period: 'Oct 2025 – Jul 2026',
+      title: 'Customer Service Assistant',
+      org: 'Tenpin Ltd (Ten Entertainment Group) — Greater London · Part-time',
+      desc: 'Delivered consistent, high-standard customer service to 20+ customers per shift as part of a 10-person team in a fast-paced hospitality and entertainment environment, alongside full-time MSc study. Recognised as Employee of the Month (May 2026).',
+    },
+    {
+      period: 'Sep 2022 – Aug 2025',
+      title: 'Facilities Manager (Maintenance Officer)',
       org: 'Our Lady of Apostles Secondary School (OLASS), Yaba, Lagos',
       desc: 'Managed facilities operations — asset tracking, maintenance scheduling, inventory management, and vendor coordination — for a large secondary school institution. This hands-on experience directly informed the design and scope of Emcent FMS: a digital system built to solve the exact operational problems encountered in this role.',
     },
     {
-      period: 'Sept 2022 – June 2023',
+      period: 'Mar 2020 – Sep 2022',
       title: 'Examinations Officer & Analyst',
       org: 'Our Lady of Apostles Secondary School (OLASS), Yaba, Lagos',
-      desc: 'Led examination logistics and data analysis for student cohorts. Managed data integrity, reporting pipelines, and process coordination under strict regulatory timelines — developing skills in structured data management, analytical reporting, and institutional process design.',
+      desc: 'Led examination logistics and data analysis for student cohorts. Managed data integrity, reporting pipelines, and process coordination under strict regulatory timelines — developing skills in structured data management, analytical reporting, and institutional process design. Held alongside teaching duties.',
     },
     {
-      period: 'Jan 2018 – June 2022',
+      period: 'Jan 2018 – Mar 2023',
       title: 'Teacher — Civic Education',
       org: 'Our Lady of Apostles Secondary School (OLASS), Yaba, Lagos',
-      desc: 'Delivered civic education curriculum to secondary school students over four years. Developed skills in structured communication, audience-appropriate explanation, and curriculum design — capabilities now applied to technical documentation, stakeholder reporting, and systems communication.',
+      desc: 'Delivered civic education curriculum to secondary school students over five years, retaining the role through two internal promotions until a successor was found. Developed skills in structured communication, audience-appropriate explanation, and curriculum design — capabilities now applied to technical documentation, stakeholder reporting, and systems communication.',
     },
     {
       period: '2010 to 2025',
