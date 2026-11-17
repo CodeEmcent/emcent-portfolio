@@ -293,7 +293,7 @@ export const experience = {
       period: 'Sep 2026 – Present',
       title: 'Retail Security Officer (SIA-licensed)',
       org: 'Mitie Security — London · Full-time',
-      desc: 'SIA-licensed (Door Supervisor; CCTV Public Space Surveillance) security officer providing retail security services across London. Holds ACT Security, ACT Awareness, First Aid at Work and Enhanced DBS credentials.',
+      desc: 'SIA-licensed (Door Supervisor; CCTV Public Space Surveillance) security officer delivering security operations across London. Holds ACT Security, ACT Awareness, First Aid at Work and Enhanced DBS credentials.',
     },
     {
       period: 'Oct 2025 – Jul 2026',
