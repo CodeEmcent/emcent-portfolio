@@ -8,10 +8,10 @@ export const personal = {
   name:       'Emekwue Innocent Chukwuemeka',
   brand:      'Emcent',
   handle:     'CodeEmcent',
-  tagline:    'MSc Management of Business IT graduate — bridging strategy, systems, and software.',
+  tagline:    'MSc Management of Business IT (Pass with Distinction) — bridging strategy, systems, and software.',
   location:   'London, United Kingdom',
   origin:     'Anambra State, Nigeria',
-  available:  'Open to opportunities · Sept 2026',
+  available:  'Open to IT consulting & graduate roles',
   linkedin:   'https://www.linkedin.com/in/chukwuemeka-innocent-emekwue/',
   github:     'https://github.com/CodeEmcent',
   email:      'innocent@emcent.dev',
@@ -31,18 +31,18 @@ export const heroStack = [
 
 export const about = {
   paragraphs: [
-    `I am <strong>Emekwue Innocent Chukwuemeka</strong> — known professionally as <strong>Emcent</strong> — a management of business IT graduate with an unusual background: I began with Philosophy, earning degrees (First Class Honours and Summa Cum Laude) from Imo State University and the Pontifical Urbaniana University in Rome, before pivoting fully into information systems and software development.`,
+    `I am <strong>Emekwue Innocent Chukwuemeka</strong> — known professionally as <strong>Emcent</strong> — a management of business IT graduate with an unusual background: I began with Philosophy, earning degrees (First Class Honours and Summa Cum Laude) from Imo State University, Owerri and the Pontifical Urbaniana University in Rome, before pivoting fully into information systems and software development.`,
     `That grounding in rigorous thinking shapes how I approach technology. I don't just build systems — I interrogate why they should exist, how they serve people, and where they might fail. It's what drew me to the intersection of <strong>business strategy, systems design, and full-stack development</strong>.`,
     `Before IT, I spent seven years at Our Lady of Apostles Secondary School in Lagos — progressing from Teacher to Examinations Officer & Analyst to <strong>Facility Manager</strong>. That final role, managing assets, maintenance, and inventory for a large institution, directly shaped my MSc dissertation: Emcent FMS is not a theoretical exercise — it was built to solve problems I experienced first-hand in a real facility.`,
-    `At Greenwich, I have designed and built Emcent FMS end-to-end, led UX research (VeriLens), produced systems analysis work (BUBO), and delivered a strategic IS implementation report. I've also served on five magazine editorial boards and one academic journal board, including as <strong>Editor-in-Chief</strong>, and authored a published book — a background that shapes how I communicate complex systems clearly to non-technical stakeholders.`,
+    `At Greenwich, I designed and built Emcent FMS end-to-end — now a production-deployed, multi-tenant platform — led UX research (VeriLens), produced systems analysis work (BUBO), and delivered a strategic IS implementation report, graduating with a Pass with Distinction. I've also served on five magazine editorial boards and one academic journal board, including as <strong>Editor-in-Chief</strong>, and authored a published book (The Question of Social Conscience: A Personal Reflection) — a background that shapes how I communicate complex systems clearly to non-technical stakeholders.`,
     `I'm based in London, targeting roles in consulting, business analysis, systems development, and IT strategy — anywhere rigorous thinking and precise communication go hand in hand.`,
   ],
   details: [
-    { icon: '🎓', label: 'Education',    value: 'MSc Management of Business IT (MBIT)',  sub: 'University of Greenwich · 2025–2026' },
+    { icon: '🎓', label: 'Education',    value: 'MSc Management of Business IT (MBIT)',  sub: 'University of Greenwich · Pass with Distinction · 2026' },
     { icon: '📍', label: 'Location',     value: 'London, United Kingdom' },
     { icon: '🌍', label: 'From',         value: 'Anambra State, Nigeria' },
     { icon: '💼', label: 'Experience',   value: 'Facility Manager · Teacher · Analyst',   sub: 'OLASS, Yaba, Lagos · 2018–2025' },
-    { icon: '📅', label: 'Availability', value: 'Open to opportunities · Sept 2026' },
+    { icon: '📅', label: 'Availability', value: 'Open to IT consulting & graduate roles' },
     { icon: '🔗', label: 'GitHub',       value: 'github.com/CodeEmcent', link: 'https://github.com/CodeEmcent' },
   ],
 }
@@ -258,7 +258,7 @@ export const experience = {
   education: [
     {
       period: 'Sept 2025 – Sept 2026',
-      title: 'MSc Management of Business Information Technology (MBIT)',
+      title: 'MSc Management of Business Information Technology (MBIT) — Pass with Distinction',
       org: 'University of Greenwich, London',
       desc: 'Modules spanning Systems Analysis & Design, UX Design, Strategic IT, Software Quality Management, IT Security & Risk, Project Management, and Systems Modelling. Dissertation: Emcent FMS — a full-stack digital asset and inventory management system.',
     },
