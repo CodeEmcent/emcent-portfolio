@@ -20,7 +20,7 @@ const dynamicStats = [
   {
     num: projects.length,
     suffix: '+',
-    label: 'Live Projects',
+    label: 'Projects',
   },
   {
     num: 3,
